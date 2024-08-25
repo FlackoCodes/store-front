@@ -10,7 +10,7 @@ export default function Footer() {
   const iconClass = "text-white";
 
   return (
-    <footer className="bg-[#1F252C] px-8 py-10">
+    <footer className="bg-[#1F252C] px-10 py-12 h-[300px] mt-4">
       <div className="flex  justify-between  w-[85%] my-0 mx-auto">
         <div className="flex flex-col gap-1">
           <h3>Company</h3>
@@ -80,7 +80,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2">
           <FaFacebook className={iconClass} />
           <FaTwitter className={iconClass} />
           <FaInstagram className={iconClass} />
