@@ -14,3 +14,15 @@ h1 {
     font-family: "Roboto", sans-serif;
     /* letter-spacing: -1px; */
 }
+
+h4{
+    font-weight: 800;
+    color: white;
+    font-size: 20px;
+}
+
+.chart-image{
+    margin: 10px 0;
+    width: 250px;
+    height: 323px;
+}

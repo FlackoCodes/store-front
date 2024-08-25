@@ -2,6 +2,7 @@ import logo from "../images/logo.png";
 import { BiBell, BiSearch } from "react-icons/bi";
 import { CgShoppingCart } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
@@ -26,9 +27,12 @@ export default function NavBar() {
             <CgShoppingCart className="text-white" />
             <span className="capitalize text-white">cart</span>
           </div>
-          <button className="border-none rounded-sm bg-white text-[#3084A9] py-1 px-2 capitalize">
+          <Link
+            to={"/login"}
+            className="border-none rounded-sm bg-white text-[#3084A9] py-1 px-3 capitalize"
+          >
             login/signup
-          </button>
+          </Link>
         </div>
       </nav>
     </div>
