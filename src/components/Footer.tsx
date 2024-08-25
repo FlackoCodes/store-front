@@ -1,5 +1,92 @@
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa6";
+import { Link } from "react-router-dom";
+
 export default function Footer() {
+  const iconClass = "text-white";
+
   return (
-    <div>Footer</div>
-  )
+    <footer className="bg-[#1F252C] px-8 py-10">
+      <div className="flex  justify-between  w-[85%] my-0 mx-auto">
+        <div className="flex flex-col gap-1">
+          <h3>Company</h3>
+          <ul className="list-none">
+            <li>
+              <Link to={"/"}>About Us</Link>
+            </li>
+            <li>
+              <Link to={"/"}>Why choose us</Link>
+            </li>
+            <li>
+              <Link to={"/"}>Pricing</Link>
+            </li>
+            <li>
+              <Link to={"/"}>Testimonial</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="flex flex-col gap-1">
+          <h3>Company</h3>
+          <ul className="list-none">
+            <li>
+              <Link to={"/"}>About Us</Link>
+            </li>
+            <li>
+              <Link to={"/"}>Why choose us</Link>
+            </li>
+            <li>
+              <Link to={"/"}>Pricing</Link>
+            </li>
+            <li>
+              <Link to={"/"}>Testimonial</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="flex flex-col gap-1">
+          <h3>Company</h3>
+          <ul className="list-none">
+            <li>
+              <Link to={"/"}>About Us</Link>
+            </li>
+            <li>
+              <Link to={"/"}>Why choose us</Link>
+            </li>
+            <li>
+              <Link to={"/"}>Pricing</Link>
+            </li>
+            <li>
+              <Link to={"/"}>Testimonial</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="flex flex-col gap-1">
+          <h3>Company</h3>
+          <ul className="list-none">
+            <li>
+              <Link to={"/"}>About Us</Link>
+            </li>
+            <li>
+              <Link to={"/"}>Why choose us</Link>
+            </li>
+            <li>
+              <Link to={"/"}>Pricing</Link>
+            </li>
+            <li>
+              <Link to={"/"}>Testimonial</Link>
+            </li>
+          </ul>
+        </div>
+        <div className="flex gap-2 items-center">
+          <FaFacebook className={iconClass} />
+          <FaTwitter className={iconClass} />
+          <FaInstagram className={iconClass} />
+          <FaLinkedin className={iconClass} />
+        </div>
+      </div>
+    </footer>
+  );
 }
