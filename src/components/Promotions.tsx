@@ -1,10 +1,7 @@
-import {
-  FaArrowLeftLong,
-  FaArrowRight,
-  FaCediSign,
-  FaStar,
-} from "react-icons/fa6";
+import { FaArrowLeftLong, FaArrowRight, FaCediSign } from "react-icons/fa6";
 import cakeProm from "../images/cake3.jfif";
+import Star from "./Star";
+import Button from "./Button";
 
 export default function Promotions() {
   return (
@@ -55,13 +52,7 @@ export default function Promotions() {
             <div className="w-full max-w-xs mt-4 bg-white rounded-md shadow-md text-left py-3 px-2">
               <h5 className="text-lg font-semibold">Double Chocolate Cake</h5>
               <div className="flex gap-1 items-center">
-                <div className="flex gap-1">
-                  <FaStar className="text-yellow-500" />
-                  <FaStar className="text-yellow-500" />
-                  <FaStar className="text-yellow-500" />
-                  <FaStar className="text-yellow-500" />
-                  <FaStar className="text-slate-400" />
-                </div>
+                <Star />
                 <span>4.6</span>
               </div>
               <div className="flex justify-between items-center mt-6">
@@ -82,9 +73,7 @@ export default function Promotions() {
                   </div>
                 </div>
                 <div>
-                  <button className="bg-[#C3E3F1] capitalize border-none rounded-md text-[#3084A9] py-1 px-3">
-                    add to cart
-                  </button>
+                  <Button />
                 </div>
               </div>
             </div>
@@ -125,13 +114,7 @@ export default function Promotions() {
             <div className="w-full max-w-xs mt-4 bg-white rounded-md shadow-md text-left py-3 px-2">
               <h5 className="text-lg font-semibold">Double Chocolate Cake</h5>
               <div className="flex gap-1 items-center">
-                <div className="flex gap-1">
-                  <FaStar className="text-yellow-500" />
-                  <FaStar className="text-yellow-500" />
-                  <FaStar className="text-yellow-500" />
-                  <FaStar className="text-yellow-500" />
-                  <FaStar className="text-slate-400" />
-                </div>
+                <Star />
                 <span>4.6</span>
               </div>
               <div className="flex justify-between items-center mt-6">
