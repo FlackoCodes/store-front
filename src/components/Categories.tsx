@@ -18,10 +18,21 @@ export default function Categories() {
           Shop <span className="text-[#3084A9]">by Categories</span>
         </h3>
       </div>
-      <div>
+      <div className="grid grid-cols-3 gap-3">
         {catCakes.map((catCake, index) => (
-          <div key={index} className="grid grid-cols-3">
-            <img src={catCake} alt="cake" />
+          <div key={index} className="mt-2">
+            <div>
+              <img src={catCake} alt="cake" className="rounded-md" />
+            </div>
+            <div className="text-center my-4">
+              <h3 className="text-[#1F252C] text-base font-medium">
+                by{" "}
+                <span className="text-[#3084A9] text-sm font-normal">
+                  HERTY TASTY HOUSE
+                </span>
+              </h3>
+              <h5 className="my-4 text-[#757C86] font-medium">¢400-¢800</h5>
+            </div>
           </div>
         ))}
       </div>
