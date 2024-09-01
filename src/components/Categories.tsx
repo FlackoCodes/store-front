@@ -18,6 +18,17 @@ export default function Categories() {
           Shop <span className="text-[#3084A9]">by Categories</span>
         </h3>
       </div>
+      <div className="flex justify-between my-2">
+        {cakes.map((CakeComponent, index) => (
+          <div
+            key={index}
+            className="bg-[#D4EEE2] rounded-lg text-center py-2 px-2 flex flex-col items-center"
+          >
+            <CakeComponent />
+            <small className="text-xs font-normal">Carrot Cake</small>
+          </div>
+        ))}
+      </div>
       <div className="grid grid-cols-3 gap-3">
         {catCakes.map((catCake, index) => (
           <div key={index} className="mt-2">
@@ -36,17 +47,7 @@ export default function Categories() {
           </div>
         ))}
       </div>
-      <div className="flex justify-between">
-        {cakes.map((CakeComponent, index) => (
-          <div
-            key={index}
-            className="bg-[#D4EEE2] rounded-lg text-center py-2 px-2 flex flex-col items-center"
-          >
-            <CakeComponent />
-            <small className="text-xs font-normal">Carrot Cake</small>
-          </div>
-        ))}
-      </div>
+
       <SubSellers />
     </div>
   );

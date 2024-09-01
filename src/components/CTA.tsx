@@ -8,16 +8,16 @@ export default function CTA() {
       style={{ backgroundImage: `url(${cakeBg})` }}
     >
       <div className="grid place-content-center min-h-[100vh]">
-        <h1 className="text-white text-3xl font-extrabold font-[roboto] w-[300px] text-center tracking-tighter mb-2">
+        <h1 className="text-white text-3xl font-extrabold font-[roboto] w-[300px] text-center tracking-tighter mb-2 z-10">
           Ghana's Most Iconic Cake For You Birthday
         </h1>
-        {/* <Link
+        <Link
           to={"/"}
-          className="bg-[#3084A9] hover:bg-[#256d8a] text-white capitalize rounded-sm p-2.5 w-fit my-0 mx-auto block"
+          className="bg-[#3084A9] hover:bg-[#256d8a] text-white capitalize rounded-md py-2 px-4 w-fit my-0 mx-auto block"
         >
           explore
-        </Link> */}
-        <button className="bg-[#3084A9] hover:bg-[#256d8a] font-medium text-white capitalize rounded-sm py-1 px-3 w-fit my-0 mx-auto block">explore</button>
+        </Link>
+        {/* <button className="bg-[#3084A9] hover:bg-[#256d8a] font-medium text-white capitalize rounded-sm py-1 px-3 w-fit my-0 mx-auto block">explore</button> */}
       </div>
     </div>
   );
