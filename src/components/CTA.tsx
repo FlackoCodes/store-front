@@ -17,7 +17,6 @@ export default function CTA() {
         >
           explore
         </Link>
-        {/* <button className="bg-[#3084A9] hover:bg-[#256d8a] font-medium text-white capitalize rounded-sm py-1 px-3 w-fit my-0 mx-auto block">explore</button> */}
       </div>
     </div>
   );
