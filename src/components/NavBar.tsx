@@ -4,6 +4,7 @@ import { CgShoppingCart } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
 
+
 export default function NavBar() {
   return (
     <div className="bg-[#3084A9]">
@@ -33,6 +34,9 @@ export default function NavBar() {
           >
             login/signup
           </Link>
+          {/* <button className="border-none rounded-sm bg-white text-[#3084A9] py-1 px-3 capitalize">
+            login/signup
+          </button> */}
         </div>
       </nav>
     </div>

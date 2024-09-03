@@ -1,6 +1,6 @@
 import { PiCrown } from "react-icons/pi";
-import Star from "./Star";
-import Button from "./Button";
+// import Star from "./Star";
+// import Button from "./Button";
 import { Link } from "react-router-dom";
 import SubSellers from "./SubSellers";
 
@@ -14,7 +14,7 @@ export default function TopSellers() {
       <div className="flex justify-between items-center mt-4">
         {Array.from({ length: 12 }).map((_, index) => (
           <div key={index} className="flex flex-col items-center">
-            <div key={index}>
+            <div>
               <PiCrown key={index} size={20} />
             </div>
             <p className="text-[#676D76] font-semibold text-[14px] text-center">
