@@ -5,21 +5,18 @@ import { BiBell, BiSearch } from "react-icons/bi";
 import { CgShoppingCart } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Login from "./Login";
+
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
-import { setActive, toggleBack } from "../store/logsSlice/logSlice";
+import { setActive } from "../store/logsSlice/logSlice";
+import SignUp from "./SignUp";
 
 export default function NavBar() {
-  // const [active, setActive] = useState(false);
   const dispatch = useDispatch();
   const isActive = useSelector((state: RootState) => state.log.isActive);
 
   const showLogs = () => {
     dispatch(setActive());
-  };
-
-  const toggleLogs = () => {
-    dispatch(toggleBack())
   };
 
   return (
@@ -52,7 +49,7 @@ export default function NavBar() {
             </button>
           </div>
         </nav>
-        {isActive && <Login />}
+        {isActive && <SignUp />}
       </div>
     </div>
   );
