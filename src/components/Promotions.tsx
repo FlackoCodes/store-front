@@ -52,7 +52,7 @@ export default function Promotions() {
             <div className="w-full max-w-xs mt-4 bg-white rounded-md shadow-md text-left py-3 px-2">
               <h5 className="text-lg font-semibold">Double Chocolate Cake</h5>
               <div className="flex gap-1 items-center">
-                <Star />
+                <Star className={''} />
                 <span>4.6</span>
               </div>
               <div className="flex justify-between items-center mt-6">

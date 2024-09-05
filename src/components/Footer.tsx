@@ -10,7 +10,7 @@ export default function Footer() {
   const iconClass = "text-white";
 
   return (
-    <footer className="bg-[#1F252C] px-10 py-12 h-full mt-4">
+    <footer className="bg-[#1F252C] px-10 py-[80px] h-full mt-4">
       <div className="flex  justify-between  w-[85%] my-0 mx-auto">
         <div className="flex flex-col gap-1">
           <h3>Company</h3>
@@ -29,7 +29,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-2">
           <h3>Company</h3>
           <ul className="list-none">
             <li>
@@ -46,7 +46,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-2">
           <h3>Company</h3>
           <ul className="list-none">
             <li>
@@ -63,7 +63,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col gap-1">
+        <div className="flex flex-col gap-2">
           <h3>Company</h3>
           <ul className="list-none">
             <li>
