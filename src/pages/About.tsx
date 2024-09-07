@@ -9,24 +9,24 @@ import { Link } from "react-router-dom";
 export default function About() {
   return (
     <div className="w-[95%] my-0 mx-auto">
-      <div className="flex my-2">
-        <div className="flex gap-1 text-[#8B96A5]">
+      <div className="flex my-8">
+        <div className="flex gap-0.5 text-[#8B96A5] items-center mr-1">
           <span>Home</span>
           <FaAngleRight />
         </div>
-        <div className="flex gap-1 text-[#8B96A5]">
+        <div className="flex gap-0.5 text-[#8B96A5] items-center mr-1">
           <span>Category</span>
           <FaAngleRight />
         </div>
-        <div className="flex gap-1 text-[#8B96A5]">
+        <div className="flex gap-0.5 text-[#8B96A5] items-center mr-1">
           <span>Flash Sales</span>
           <FaAngleRight />
         </div>
-        <div className="flex gap-1 text-[#8B96A5]">
+        <div className="flex gap-0.5 text-[#8B96A5]">
           <span>Lady M Cakes</span>
         </div>
       </div>
-      <div className="w-[85%] my-0 mx-auto grid grid-cols-2 gap-4">
+      <div className="w-[85%] my-0 mx-auto grid grid-cols-2 gap-2">
         <div>
           <img src={aboutCake} alt="cake" className="rounded-md" />
         </div>
@@ -77,59 +77,55 @@ export default function About() {
               </button>
               <Button className={"bg-[#C3E3F1] text-[#3084A9]"} />
             </div>
-            {/* review section */}
-            <div className="flex gap-2">
-              <h3 className="font-bold text-[#1F252C] tracking-tight p-2 border-b-2 border-b-[#3084A9]">
-                Description
-              </h3>
-              <h3 className="font-bold text-[#1F252C] tracking-tight">
-                Review
-              </h3>
-            </div>
-            {/* list reviews */}
-            <div className="flex justify-between items center">
+          </div>
+          {/* review section  close div here*/}
+          <div className="flex gap-2">
+            <h3 className="font-bold text-[#1F252C] tracking-tight p-2 border-b-2 border-b-[#3084A9]">
+              Description
+            </h3>
+            <h3 className="font-bold text-[#1F252C] tracking-tight">Review</h3>
+          </div>
+          {/* list reviews */}
+          <div className="flex justify-between items center">
+            <div>
+              <span className="text-[#757C86] text-sm font-bold tracking-tight my-2">
+                More Details
+              </span>
               <div>
-                <span className="text-[#757C86] text-sm font-bold tracking-tight my-2">
-                  More Details
-                </span>
-                <div>
-                  <h4 className="text-sm text-[#1F252C] tracking-tight my-2.5">
-                    This package serves 20 People and includes:
-                  </h4>
-                  <ul className="text-[#000000] tracking-tight font-normal">
-                    <li>1 GIANT 20 Layer Vanilla Peanut Butter Cake</li>
-                    <li>8 oz. Peanut Butter Mascarpone</li>
-                    <li>8 oz. Peanut Brittle</li>
-                    <li>
-                      Each cake measures 10" in diameter and 6.5" high and
-                      weighs 12 lbs!
-                    </li>
-                  </ul>
-                </div>
+                <h4 className="text-sm text-[#1F252C] tracking-tight my-2.5">
+                  This package serves 20 People and includes:
+                </h4>
+                <ul className="text-[#000000] tracking-tight font-normal">
+                  <li>1 GIANT 20 Layer Vanilla Peanut Butter Cake</li>
+                  <li>8 oz. Peanut Butter Mascarpone</li>
+                  <li>8 oz. Peanut Brittle</li>
+                  <li>
+                    Each cake measures 10" in diameter and 6.5" high and weighs
+                    12 lbs!
+                  </li>
+                </ul>
               </div>
+            </div>
+            <div>
+              <span className="text-[#757C86] text-sm font-bold tracking-tight my-2">
+                More Details
+              </span>
               <div>
-                <span className="text-[#757C86] text-sm font-bold tracking-tight my-2">
-                  More Details
-                </span>
-                <div>
-                  <ul className="text-[#000000] tracking-tight font-normal">
-                    <li>
-                      Cake ships frozen with ice packs, may thaw in transit
-                    </li>
-                    <li>
-                      Upon arrival remove packaging and place immediately in the
-                      fridge, freezer, or allow to defrost at room temperature
-                    </li>
-                    <li>
-                      May be stored in the refrigerator for up to 1 week, or
-                      frozen for up to 1 month
-                    </li>
-                    <li>
-                      To serve from frozen allow the cake to thaw in the fridge
-                      for 1 day
-                    </li>
-                  </ul>
-                </div>
+                <ul className="text-[#000000] tracking-tight font-normal">
+                  <li>Cake ships frozen with ice packs, may thaw in transit</li>
+                  <li>
+                    Upon arrival remove packaging and place immediately in the
+                    fridge, freezer, or allow to defrost at room temperature
+                  </li>
+                  <li>
+                    May be stored in the refrigerator for up to 1 week, or
+                    frozen for up to 1 month
+                  </li>
+                  <li>
+                    To serve from frozen allow the cake to thaw in the fridge
+                    for 1 day
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

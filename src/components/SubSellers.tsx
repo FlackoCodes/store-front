@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import cake4 from "../images/cake4.jfif";
 import Button from "./Button";
 import Star from "./Star";
@@ -11,7 +12,9 @@ export default function SubSellers() {
         {arr.map((item, index) => (
           <div className="flex flex-col">
             <div key={index}>
-              <img src={item} alt="cake" className="rounded-md" />
+              <Link to={"/details"}>
+                <img src={item} alt="cake" className="rounded-md" />
+              </Link>
             </div>
             <div>
               <h4 className="text-[#3084A9] font-normal text-base">
