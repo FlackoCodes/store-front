@@ -13,7 +13,7 @@ export default function About() {
     <div className="w-[95%] mx-auto">
       <div className="flex my-8 space-x-2 text-[#8B96A5] items-center">
         <div className="flex items-center space-x-0.5">
-          <span>Home</span>
+          <Link to={"/"}>Home</Link>
           <FaAngleRight />
         </div>
         <div className="flex items-center space-x-0.5">
