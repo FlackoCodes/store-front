@@ -68,11 +68,13 @@ export default function About() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-4">
               <div className="flex items-center py-1 px-2 justify-between w-fit border border-gray-300 rounded-md">
-                <span className="mr-1 text-[#3084A9] font-normal">Quantity</span>
+                <span className="mr-1 text-[#3084A9] font-normal">
+                  Quantity
+                </span>
                 <div className="flex items-center">
                   <span className="text-[#676D76] font-normal">1</span>
                   <div className="flex flex-col ml-2">
-                    <FaAngleUp   className="text-[#676D76] w-[11px] h-[11px] cursor-pointer" />
+                    <FaAngleUp className="text-[#676D76] w-[11px] h-[11px] cursor-pointer" />
                     <FaAngleDown className="text-[#676D76] w-[11px] h-[11px] cursor-pointer" />
                   </div>
                 </div>
