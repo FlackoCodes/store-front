@@ -10,7 +10,7 @@ import Contact from "../components/Contact";
 
 export default function About() {
   return (
-    <div className="w-[95%] mx-auto">
+    <div className="w-[96%] mx-auto">
       <div className="flex my-8 space-x-2 text-[#8B96A5] items-center">
         <div className="flex items-center space-x-0.5">
           <Link to={"/"}>Home</Link>
@@ -29,15 +29,15 @@ export default function About() {
         </div>
       </div>
 
-      <div className="w-[85%] mx-auto flex gap-4">
+      <div className="w-[93%] mx-auto flex gap-4">
         <div className="flex-1">
           <img
             src={aboutCake}
             alt="cake"
-            className="w-[480px] h-[500px] rounded-md"
+            className="w-[520px] h-[500px] rounded-md"
           />
         </div>
-        <div className="flex-1 flex flex-col gap-4 mr-5">
+        <div className="flex-1 flex flex-col gap-4 mr-8">
           <div className="flex flex-col gap-2">
             <h4 className="text-[#3084A9] font-semibold">Lady M Confection</h4>
             <h3 className="text-[#1F252C] font-bold text-xl">
@@ -68,12 +68,12 @@ export default function About() {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-4">
               <div className="flex items-center py-1 px-2 justify-between w-fit border border-gray-300 rounded-md">
-                <span>Quantity</span>
+                <span className="mr-1 text-[#3084A9] font-normal">Quantity</span>
                 <div className="flex items-center">
-                  <span>1</span>
+                  <span className="text-[#676D76] font-normal">1</span>
                   <div className="flex flex-col ml-2">
-                    <FaAngleUp className="text-gray-300 cursor-pointer" />
-                    <FaAngleDown className="text-gray-300 cursor-pointer" />
+                    <FaAngleUp   className="text-[#676D76] w-[11px] h-[11px] cursor-pointer" />
+                    <FaAngleDown className="text-[#676D76] w-[11px] h-[11px] cursor-pointer" />
                   </div>
                 </div>
               </div>
@@ -91,7 +91,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="w-[85%] mx-auto mt-8">
+      <div className="w-[93%] mx-auto mt-8">
         <div className="flex  mb-4">
           <h3 className="font-bold text-[#1F252C] tracking-tight p-2 border-b-2 border-[#3084A9]">
             Description
@@ -143,21 +143,17 @@ export default function About() {
         </div>
       </div>
 
-      <div className="my-4 text-center">
-        <h4 className="font-medium tracking-tight text-[#1F252C] text-start">
+      <div className="mb-4 w-[93%] mt-4 my-0 mx-auto">
+        <h4 className="font-medium tracking-tight text-[#1F252C]">
           Recommended for you
         </h4>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-4 mb-4 w-[85%] my-0 mx-auto">
+      <div className="flex flex-wrap justify-center gap-4 mb-4 w-[93%] my-0 mx-auto">
         <SubSellers />
         <SubSellers />
         <SubSellers />
         <SubSellers />
-      </div>
-
-      <div className="my-6">
-        <Contact />
       </div>
 
       <div className="my-6">
@@ -167,6 +163,10 @@ export default function About() {
         >
           Back to Catalogue
         </Link>
+      </div>
+
+      <div className="my-6">
+        <Contact />
       </div>
     </div>
   );

@@ -30,7 +30,7 @@ export default function SubSellers() {
                 <p className="text-[#1F252C]">4.6</p>
                 <Star className={"gap-0"} />
               </div>
-              <Button className={"py-1 px-1.5 text-sm"} />
+              <Button className={"py-1 px-1 text-sm"} />
             </div>
           </div>
         ))}
