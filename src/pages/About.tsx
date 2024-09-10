@@ -21,7 +21,7 @@ export default function About() {
           <FaAngleRight />
         </div>
         <div className="flex items-center space-x-0.5">
-          <span>Flash Sales</span>
+          <Link to={"/flash-sales"}>Flash Sales</Link>
           <FaAngleRight />
         </div>
         <div className="flex items-center">
