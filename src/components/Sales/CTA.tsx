@@ -5,7 +5,7 @@ export default function CTA() {
     <>
       <div
         className="bg-cover bg-center h-[561px]"
-        style={{ backgroundImage: `url(${salesCta})` }}
+        style={{ backgroundImage: `url(${salesCta})`}}
       ></div>
     </>
   );
