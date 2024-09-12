@@ -11,7 +11,7 @@ export default function SideBar() {
   return (
     <aside className="w-[95%] my-0 mx-auto">
       <div className="flex flex-col gap-2">
-        <div className="border-b border-b-[#C9D2DF] w-fit">
+        <div className="mb-2 border-b border-b-[#C9D2DF] w-fit">
           <h3 className="font-[inter] font-bold text-[32px]">Category</h3>
         </div>
         <div className="flex flex-col gap-2">
@@ -79,12 +79,13 @@ export default function SideBar() {
           </h5>
         </div>
       </div>
-      <div className="mb-2 border-b border-b-[#757C86] w-fit">
+      <div className="my-6">
         <h3 className="text-[#757C86] font-bold">Promotions</h3>
         <div className="flex flex-col gap-4 mt-2">
-          <h3 className="text-[#1F252C] font-bold">Promotions</h3>
-          <h3 className="text-[#1F252C] font-bold">Promotions</h3>
-          <h3 className="text-[#1F252CF] font-bold">Promotions</h3>
+          <h3 className="text-[#1F252C] font-bold mt-2">Flash Sales</h3>
+          <h3 className="text-[#1F252C] font-bold">Black Friday</h3>
+          <h3 className="text-[#1F252C] font-bold">Discount</h3>
+          <h3 className="text-[#1F252CF] font-bold">Happy Weekend</h3>
         </div>
       </div>
     </aside>
