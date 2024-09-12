@@ -80,13 +80,18 @@ export default function SideBar() {
         </div>
       </div>
       <div className="my-6">
-        <h3 className="text-[#757C86] font-bold">Promotions</h3>
+        <h3 className="text-[#757C86] font-bold border-b border-b-[#757C86] w-[130px] mb-2">
+          Promotions
+        </h3>
         <div className="flex flex-col gap-4 mt-2">
           <h3 className="text-[#1F252C] font-bold mt-2">Flash Sales</h3>
           <h3 className="text-[#1F252C] font-bold">Black Friday</h3>
           <h3 className="text-[#1F252C] font-bold">Discount</h3>
           <h3 className="text-[#1F252CF] font-bold">Happy Weekend</h3>
         </div>
+      </div>
+      <div className="mb-4 border-b border-b-[#757C86] w-[100px]">
+        <h3 className="text-[#757C86] font-bold ">Price</h3>
       </div>
     </aside>
   );
