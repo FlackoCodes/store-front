@@ -1,7 +1,7 @@
 export default function Header() {
   return (
-    <div className="my-2">
-      <div className="w-[95%] my-0 mx-auto grid grid-cols-[25%,75%]">
+    <div className="my-6">
+      <div className="w-[95%] my-0 mx-auto grid grid-cols-[18%,82%]">
         <h5 className="text-[#000000] font-semibold tracking-tight text-[24px]">
           ON FLASH SALES
         </h5>
