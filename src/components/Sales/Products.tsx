@@ -25,7 +25,7 @@ export default function Products() {
             <span>4.6</span>
             <Star />
           </div> */}
-          <Button className={"w-full my-1"} />
+          <Button className={"w-full my-2"} />
         </div>
       </div>
       <div className="flex flex-col gap-1">
@@ -46,7 +46,7 @@ export default function Products() {
             <span>4.6</span>
             <Star /> 
           </div> */}
-          <Button className={"w-full my-1"} />
+          <Button className={"w-full my-2"} />
         </div>
       </div>
       <div className="flex flex-col gap-1">
@@ -67,7 +67,7 @@ export default function Products() {
             <span>4.6</span>
             <Star />
           </div> */}
-          <Button className={"w-full my-1"} />
+          <Button className={"w-full my-2"} />
         </div>
       </div>
       <div className="flex flex-col gap-1">
@@ -88,7 +88,7 @@ export default function Products() {
             <span>4.6</span>
             <Star className={"m-0"} />
           </div> */}
-          <Button className={"w-full my-1"} />
+          <Button className={"w-full my-2"} />
         </div>
       </div>
     </div>

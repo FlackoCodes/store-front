@@ -44,7 +44,7 @@ export default function About() {
               Strawberry Swirl Mile Crepe Cake
             </h3>
             <div className="flex items-center gap-0.5">
-              <Star />
+              <Star className={""} />
               <span>4.6</span>
             </div>
             <h3 className="text-[#1F252C] font-bold text-xl">¢600.00</h3>

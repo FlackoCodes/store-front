@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Login from "./components/Login";
 import About from "./pages/About";
 import FlashSales from "./pages/FlashSales";
+import Company from "./pages/Company";
 
 function App() {
   const router = createBrowserRouter(
@@ -18,6 +19,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/details" element={<About />} />
         <Route path="/flash-sales" element={<FlashSales />} />
+        <Route path="/about-us" element={<Company />} />
       </Route>
     )
   );

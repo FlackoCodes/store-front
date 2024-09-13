@@ -16,7 +16,7 @@ export default function Footer() {
           <h3>Company</h3>
           <ul className="list-none">
             <li>
-              <Link to={"/"}>About Us</Link>
+              <Link to={"/about-us"}>About Us</Link>
             </li>
             <li>
               <Link to={"/"}>Why choose us</Link>
