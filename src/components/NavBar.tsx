@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import { setActive } from "../store/logsSlice/logSlice";
 import SignUp from "./SignUp";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   const dispatch = useDispatch();
@@ -24,7 +25,9 @@ export default function NavBar() {
       <div className="bg-[#3084A9] relative">
         <nav className="flex justify-between items-center w-[90%] my-0 mx-auto py-4">
           <div>
-            <img className="w-[135px] h-[66px]" src={logo} alt="logo" />
+            <Link to={"/"}>
+              <img className="w-[135px] h-[66px]" src={logo} alt="logo" />
+            </Link>
           </div>
           <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2 max-w-md bg-white">
             <BiSearch className="text-xl text-[#3084A9] mr-2" />

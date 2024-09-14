@@ -4,14 +4,16 @@ export default function OurServices() {
   return (
     <div className="my-14">
       <div className="w-[85%] my-0 mx-auto">
-        <header className="text-center my-2 font-bold text-xl">What We Provide?</header>
+        <header className="text-center my-2 font-bold text-xl">
+          What We Provide?
+        </header>
         <div className="grid grid-cols-3 gap-8 my-4 text-center">
           <div className="border-2 border-t-[#3084A9] rounded-md shadow p-4">
             <div className="flex justify-center">
               <img className="w-5" src={tickerStar} alt="ticker-star" />
             </div>
             <h5 className="text-[#24637F] font-bold tracking-tight">
-              Best Pruces & Offers
+              Best Prices & Offers
             </h5>
             <p className="text-[#24637F] font-normal">
               Lorem ipsum dolor sit amet consectetur. Sit enim lorem ipsum quis
@@ -23,7 +25,7 @@ export default function OurServices() {
               <img className="w-5" src={tickerStar} alt="ticker-star" />
             </div>
             <h5 className="text-[#24637F] font-bold tracking-tight">
-              Best Pruces & Offers
+              Free Delivery
             </h5>
             <p className="text-[#24637F] font-normal">
               Lorem ipsum dolor sit amet consectetur. Sit enim lorem ipsum quis
@@ -35,7 +37,7 @@ export default function OurServices() {
               <img className="w-5" src={tickerStar} alt="ticker-star" />
             </div>
             <h5 className="text-[#24637F] font-bold tracking-tight">
-              Best Pruces & Offers
+              100% Satisfaction
             </h5>
             <p className="text-[#24637F] font-normal">
               Lorem ipsum dolor sit amet consectetur. Sit enim lorem ipsum quis
