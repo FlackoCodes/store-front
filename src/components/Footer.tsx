@@ -14,7 +14,7 @@ export default function Footer() {
       <div className=" flex flex-col text-center md:flex-row lg:flex-row md:text-left lg:text-start justify-between w-[85%] my-0 mx-autoFF">
         <div className="flex flex-col gap-1">
           <h3>Company</h3>
-          <ul className="list-none">
+          <ul className="list-none flex flex-col gap-2 font-normal tracking-tight">
             <li>
               <Link to={"/about-us"}>About Us</Link>
             </li>
@@ -31,7 +31,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col gap-2">
           <h3>Resources</h3>
-          <ul className="list-none">
+          <ul className="list-none flex flex-col gap-2 font-normal tracking-tight">
             <li>
               <Link to={"/"}>Privacy Policy</Link>
             </li>
@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col gap-2">
           <h3>Products</h3>
-          <ul className="list-none">
+          <ul className="list-none flex flex-col gap-2 font-normal tracking-tight">
             <li>
               <Link to={"/"}>About Us</Link>
             </li>
@@ -65,18 +65,21 @@ export default function Footer() {
         </div>
         <div className="flex flex-col gap-2">
           <h3>Customer Care</h3>
-          <ul className="list-none">
+          <ul className="list-none flex flex-col gap-2 font-normal tracking-tight">
             <li>
-              <Link to={"/"}>About Us</Link>
+              <Link to={"/"}>Check Order Status</Link>
             </li>
             <li>
-              <Link to={"/"}>Why choose us</Link>
+              <Link to={"/"}>Check Gift Card Balance</Link>
             </li>
             <li>
-              <Link to={"/"}>Pricing</Link>
+              <Link to={"/"}>Customer Care</Link>
             </li>
             <li>
-              <Link to={"/"}>Testimonial</Link>
+              <Link to={"/"}>Reviews</Link>
+            </li>
+            <li>
+              <Link to={"/"}>Customer Care</Link>
             </li>
           </ul>
         </div>
