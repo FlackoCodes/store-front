@@ -11,7 +11,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#1F252C] px-10 py-[80px] h-full mt-4">
-      <div className=" flex flex-col text-center md:flex-row lg:flex-row md:text-left lg:text-start justify-between w-[85%] my-0 mx-autoFF">
+      <div className=" flex flex-col text-center md:flex-row lg:flex-row md:text-left lg:text-start justify-between w-[85%] my-0 mx-auto">
         <div className="flex flex-col gap-1">
           <h3>Company</h3>
           <ul className="list-none flex flex-col gap-2 font-normal tracking-tight">

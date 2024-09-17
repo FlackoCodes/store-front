@@ -50,7 +50,6 @@ export default function NavBar() {
             >
               login/signup
             </button>
-            <GiHamburgerMenu />
           </div>
         </nav>
         {isActive && <SignUp />}
