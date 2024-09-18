@@ -34,7 +34,7 @@ export default function NavBar() {
             <input
               type="text"
               placeholder="search cakes, flowers and more"
-              className="w-[300px] px-1 py-1 outline-none"
+              className="w-[150px] md:w-[300px] p-1 outline-none"
             />
             <GiHamburgerMenu className="text-xl text-[#3084A9] ml-auto" />
           </div>
