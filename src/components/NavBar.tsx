@@ -38,7 +38,7 @@ export default function NavBar() {
             />
             <GiHamburgerMenu className="text-xl text-[#3084A9] ml-auto" />
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 sm:hidden">
             <BiBell className="text-white" />
             <div className="flex gap-1 items-center">
               <CgShoppingCart className="text-white" />
