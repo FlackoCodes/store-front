@@ -18,7 +18,7 @@ export default function Categories() {
           Shop <span className="text-[#3084A9]">by Categories</span>
         </h3>
       </div>
-      <div className="flex justify-between my-2">
+      <div className="hidden md:flex justify-between my-2">
         {cakes.map((CakeComponent, index) => (
           <div
             key={index}

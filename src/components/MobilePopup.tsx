@@ -1,3 +1,7 @@
+import { BiBell, BiSearch } from "react-icons/bi";
+import { CgShoppingCart } from "react-icons/cg";
+import { GiHamburgerMenu } from "react-icons/gi";
+
 export default function MobilePopup() {
   return (
     <>

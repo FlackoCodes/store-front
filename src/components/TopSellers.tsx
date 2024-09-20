@@ -11,7 +11,7 @@ export default function TopSellers() {
         <h5 className="text-[#1F252C] font-bold leading">TOP SELLERS</h5>
         <h3 className="">Choose Your Food Experience</h3>
       </div>
-      <div className="flex justify-between items-center mt-4">
+      <div className="hidden md:flex justify-between items-center mt-4">
         {Array.from({ length: 12 }).map((_, index) => (
           <div key={index} className="flex flex-col items-center">
             <div>

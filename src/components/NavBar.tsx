@@ -27,7 +27,7 @@ export default function NavBar() {
             <Link to={"/"}>
               <img className="w-[200px] h-[66px]" src={logo} alt="logo" />
             </Link>
-            <div className="flex items-center border lg:ml-80 border-gray-300 rounded-lg px-3 py-2 max-w-md bg-white w-full">
+            <div className="flex items-center border lg:ml-[300px] border-gray-300 rounded-lg px-3 py-2 max-w-md bg-white w-full sm:">
               <BiSearch className="text-xl text-[#3084A9] mr-2" />
               <input
                 type="text"

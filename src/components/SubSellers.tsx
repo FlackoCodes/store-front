@@ -8,7 +8,7 @@ export default function SubSellers() {
 
   return (
     <>
-      <div className="flex my-4 gap-3">
+      <div className="flex flex-col md:flex-row items-center my-4 gap-3">
         {arr.map((item, index) => (
           <div className="flex flex-col">
             <div key={index}>

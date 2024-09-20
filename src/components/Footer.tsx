@@ -83,7 +83,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="flex gap-2 justify-center sm:justify-center">
+        <div className="flex gap-2 justify-center sm:justify-center sm:mt-4">
           <FaFacebook className={iconClass} />
           <FaTwitter className={iconClass} />
           <FaInstagram className={iconClass} />
