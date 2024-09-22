@@ -34,7 +34,7 @@ export default function About() {
           <img
             src={aboutCake}
             alt="cake"
-            className="w-[520px] h-[500px] rounded-md"
+            className="w-[350px] h-[350px] md:w-[520px] md:h-[500px] rounded-md"
           />
         </div>
         <div className="flex-1 flex flex-col gap-4 mr-8">
@@ -84,7 +84,7 @@ export default function About() {
               </div>
             </div>
             <div className="flex gap-4">
-              <button className="border-none rounded-md bg-[#3084A9] text-white py-2 px-4 capitalize">
+              <button className="border-none rounded-md bg-[#3084A9] text-white py-1 px-2 md:py-2 md:px-4 capitalize">
                 Buy Now
               </button>
               <Button className="bg-[#C3E3F1] text-[#3084A9] px-8" />
@@ -102,7 +102,7 @@ export default function About() {
             Review
           </h3>
         </div>
-        <div className="flex gap-8">
+        <div className="flex flex-col md:flex-row gap-8">
           <div className="flex-1">
             <span className="text-[#757C86] text-sm font-bold tracking-tight mb-2">
               More Details
