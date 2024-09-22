@@ -11,21 +11,25 @@ import Contact from "../components/Contact";
 export default function About() {
   return (
     <div className="w-[96%] mx-auto">
-      <div className="flex my-8 space-x-2 text-[#8B96A5] items-center">
-        <div className="flex items-center space-x-0.5">
-          <Link to={"/"}>Home</Link>
+      <div className="flex my-8 space-x-1 md:space-x-2 text-[#8B96A5] items-center">
+        <div className="flex items-center md:space-x-0.5">
+          <Link to={"/"} className="text-sm md:text-base">
+            Home
+          </Link>
           <FaAngleRight />
         </div>
-        <div className="flex items-center space-x-0.5">
-          <span>Category</span>
+        <div className="flex items-center md:space-x-0.5">
+          <span className="text-sm md:text-base">Category</span>
           <FaAngleRight />
         </div>
-        <div className="flex items-center space-x-0.5">
-          <Link to={"/flash-sales"}>Flash Sales</Link>
+        <div className="flex items-center md:space-x-0.5">
+          <Link to={"/flash-sales"} className="text-sm md:text-base">
+            Flash Sales
+          </Link>
           <FaAngleRight />
         </div>
         <div className="flex items-center">
-          <span>Lady M Cakes</span>
+          <span className="text-sm md:text-base">Lady M Cakes</span>
         </div>
       </div>
 
