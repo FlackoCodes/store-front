@@ -3,7 +3,7 @@ import primalCake from "../../images/primal.png";
 export default function Primal() {
   return (
     <div className="w-[85%] my-0 mx-auto">
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2">
         <div>
           <img src={primalCake} alt="Flacko Image" />
         </div>

@@ -3,7 +3,7 @@ import img from "../../images/chief.png";
 export default function Founder() {
   return (
     <div className="w-[85%] my-0 mx-auto">
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2">
         <div>
           <img src={img} alt="Flacko Image" />
         </div>

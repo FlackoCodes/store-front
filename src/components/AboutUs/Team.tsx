@@ -12,7 +12,7 @@ export default function Team() {
             </span>
           </h5>
         </header>
-        <div className="w-[85%] my-0 mx-auto grid grid-cols-4 justify-between gap-y-4">
+        <div className="w-[85%] my-0 mx-auto grid grid-cols-2 md:grid-cols-4 justify-between gap-y-4">
           <div className="flex flex-col gap-0.5 items-center">
             <div>
               <img

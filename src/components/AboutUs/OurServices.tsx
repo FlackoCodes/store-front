@@ -7,7 +7,7 @@ export default function OurServices() {
         <header className="text-center my-2 font-bold text-xl">
           What We Provide?
         </header>
-        <div className="grid grid-cols-3 gap-8 my-4 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 my-4 text-center">
           <div className="border-2 border-t-[#3084A9] rounded-md shadow p-4">
             <div className="flex justify-center">
               <img className="w-5" src={tickerStar} alt="ticker-star" />
@@ -45,9 +45,9 @@ export default function OurServices() {
             </p>
           </div>
         </div>
-        <div className="my-10 bg-[#FFF4EA] flex items-center justify-between text-center py-8 px-10">
+        <div className="my-10 bg-[#FFF4EA] flex items-center gap-2 md:gap-0 justify-between text-center py-4 px-2 md:py-8 md:px-10">
           <div>
-            <h1 className="text-[#1F252C] font-medium tracking-tight text-[32px]">
+            <h1 className="text-[#1F252C] font-medium tracking-tight text-[20px] md:text-[32px]">
               10
             </h1>
             <p className="text-[#1F252C] font-normal tracking-tight text-[16px]">
@@ -55,7 +55,7 @@ export default function OurServices() {
             </p>
           </div>
           <div>
-            <h1 className="text-[#1F252C] font-medium tracking-tight text-[32px]">
+            <h1 className="text-[#1F252C] font-medium tracking-tight text-[20px] md:text-[32px]">
               540
             </h1>
             <p className="text-[#1F252C] font-normal tracking-tight text-[16px]">
@@ -63,15 +63,15 @@ export default function OurServices() {
             </p>
           </div>
           <div>
-            <h1 className="text-[#1F252C] font-medium tracking-tight text-[32px]">
+            <h1 className="text-[#1F252C] font-medium tracking-tight text-[20px] md:text-[32px]">
               1900
             </h1>
-            <p className="text-[#1F252C] font-normal tracking-tight text-[16px]">
+            <p className="text-[#1F252C] font-normal tracking-tight  md:text-[16px]">
               Orders Completed
             </p>
           </div>
           <div>
-            <h1 className="text-[#1F252C] font-medium tracking-tight text-[32px]">
+            <h1 className="text-[#1F252C] font-medium tracking-tight text-[20px] md:text-[32px]">
               10
             </h1>
             <p className="text-[#1F252C] font-normal tracking-tight text-[16px]">
