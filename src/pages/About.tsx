@@ -29,7 +29,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="w-[93%] mx-auto flex gap-4">
+      <div className="w-[93%] mx-auto  flex flex-col md:flex-row gap-4">
         <div className="flex-1">
           <img
             src={aboutCake}
