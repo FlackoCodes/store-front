@@ -10,7 +10,7 @@ export default function FlashSales() {
     <>
       <CTA />
       <Header />
-      <div className="w-[95%] my-0 mx-auto grid grid-cols-[18%,82%]">
+      <div className="w-[95%] my-0 mx-auto grid grid-cols-2 md:grid-cols-[18%,82%]">
         <SideBar />
         <div className="mb-2">
           <Products />

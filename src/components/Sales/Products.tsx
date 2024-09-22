@@ -6,11 +6,11 @@ import Button from "../Button";
 // import Star from "../Star";
 export default function Products() {
   return (
-    <div className="grid grid-cols-4 gap-2 my-2">
+    <div className="grid grid-cols-1  md:grid-cols-4 gap-2 my-2">
       <div className="flex flex-col gap-1">
         <img
           src={sales1}
-          className="rounded-md w-[230px] h-[250px]"
+          className="rounded-md w-[150px] h-[180px] md:w-[230px] md:h-[250px]"
           alt="cake"
         />
         <div className="flex flex-col gap-0.5">
@@ -31,7 +31,7 @@ export default function Products() {
       <div className="flex flex-col gap-1">
         <img
           src={sales2}
-          className="rounded-md w-[230px] h-[250px]"
+          className="rounded-md w-[150px] h-[180px] md:w-[230px] md:h-[250px]"
           alt="cake"
         />
         <div className="flex flex-col gap-0.5">
@@ -52,7 +52,7 @@ export default function Products() {
       <div className="flex flex-col gap-1">
         <img
           src={sales3}
-          className="rounded-md w-[230px] h-[250px]"
+          className="rounded-md w-[150px] h-[180px] md:w-[230px] md:h-[250px]"
           alt="cake"
         />
         <div className="flex flex-col gap-0.5">
@@ -73,7 +73,7 @@ export default function Products() {
       <div className="flex flex-col gap-1">
         <img
           src={sales4}
-          className="rounded-md w-[230px] h-[250px]"
+          className="rounded-md w-[150px] h-[180px] md:w-[230px] md:h-[250px]"
           alt="cake"
         />
         <div className="flex flex-col gap-0.5">
