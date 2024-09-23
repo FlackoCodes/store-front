@@ -1,7 +1,6 @@
 import logo from "../images/logo.png";
 import { FaRegTimesCircle } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-// import { RootState } from "../store/store";
 import { toggleBack } from "../store/logsSlice/logSlice";
 
 export default function Login() {
@@ -13,7 +12,7 @@ export default function Login() {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
-      <div className="relative bg-white p-6 rounded-md shadow-lg max-w-sm w-full">
+      <div className="relative bg-white p-6 sm:p-8 rounded-md shadow-lg max-w-md w-full mx-4 max-h-[90vh] overflow-auto">
         <button
           onClick={toggleLogs}
           className="absolute top-3 right-3 text-gray-500"
