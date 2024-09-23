@@ -1,10 +1,9 @@
-import sales1 from "./images/sales1.png"
-import sales2 from "./images/sales1.png"
-import sales3 from "./images/sales1.png"
-import sales4 from "./images/sales1.png"
+import sales1 from "./images/sales1.png";
+import sales2 from "./images/sales1.png";
+import sales3 from "./images/sales1.png";
+import sales4 from "./images/sales1.png";
 
-
-const data = [
+export const data = [
   {
     id: 1,
     name: "Chocolate Velvet Cake",

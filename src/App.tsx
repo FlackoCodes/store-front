@@ -4,6 +4,9 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
+
+import scrollToTop from "./scrollToTop.js";
+
 import MainLayout from "./Layout/MainLayout";
 import Home from "./pages/Home";
 import Login from "./components/Login";
