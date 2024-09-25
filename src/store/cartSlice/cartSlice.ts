@@ -1,8 +1,13 @@
-import { createSlice } from "@reduxjs/toolkit";
-// import type { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+interface CartItem {
+  id: number;
+  name: string;
+  price: number;
+}
 
 export interface cartState {
-  cart: [];
+  cart: CartItem[]; // Specify that cart is an array of CartItem
 }
 
 const initialState: cartState = {
@@ -13,8 +18,9 @@ export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart: (state, action) => {
-      state.cart.push(action.payload);
+    addToCart: (state, action: PayloadAction<CartItem>) => {
+      // Specify the payload type
+      state.cart.push(action.payload); // Now TypeScript knows what to expect
     },
   },
 });
