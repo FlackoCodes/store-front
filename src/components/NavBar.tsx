@@ -16,6 +16,8 @@ export default function NavBar() {
   const dispatch = useDispatch();
   const isActive = useSelector((state: RootState) => state.log.isActive);
 
+  const [login, setLogin] = useState(false);
+
   const showLogs = () => {
     dispatch(setActive());
   };
@@ -51,7 +53,8 @@ export default function NavBar() {
             </button>
           </div>
         </nav>
-        {isActive && <SignUp />}
+        {isActive && <SignUp setLogin={setLogin} />}
+        {login && <Login />}
       </div>
     </div>
   );

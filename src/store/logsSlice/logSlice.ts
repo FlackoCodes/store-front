@@ -1,16 +1,17 @@
-import { createSlice } from "@reduxjs/toolkit";
-// import type { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-export interface LogState {
+export interface AppState {
   isActive: boolean;
+  showSignIn: boolean;
 }
 
-const initialState: LogState = {
+const initialState: AppState = {
   isActive: false,
+  showSignIn: true,
 };
 
-export const activeSlice = createSlice({
-  name: "logs",
+const appSlice = createSlice({
+  name: "app",
   initialState,
   reducers: {
     setActive: (state) => {
@@ -19,9 +20,16 @@ export const activeSlice = createSlice({
     toggleBack: (state) => {
       state.isActive = false;
     },
+    closeSignIn: (state) => {
+      state.showSignIn = false;
+    },
+    toggleSignIn: (state) => {
+      state.showSignIn = !state.showSignIn;
+    },
   },
 });
 
-export const { setActive, toggleBack } = activeSlice.actions;
+export const { setActive, toggleBack, closeSignIn, toggleSignIn } =
+  appSlice.actions;
 
-export default activeSlice.reducer;
+export default appSlice.reducer;

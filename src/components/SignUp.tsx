@@ -2,15 +2,13 @@ import logo from "../images/logo.png";
 import { FaRegTimesCircle } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { toggleBack } from "../store/logsSlice/logSlice";
-import { useState } from "react";
-import Login from "./Login";
 
-export default function SignUp() {
-  const [login, setLogin] = useState(false);
+export default function SignUp({ setLogin }) {
   const dispatch = useDispatch();
 
   const showLogin = () => {
-    setLogin(!login);
+    setLogin(true);
+    dispatch(toggleBack());
   };
 
   const toggleLogs = () => {
@@ -73,7 +71,6 @@ export default function SignUp() {
             </span>
           </p>
         </form>
-        {login && <Login />}
       </div>
     </div>
   );
