@@ -7,11 +7,13 @@ interface CartItem {
 }
 
 export interface cartState {
-  cart: CartItem[]; // Specify that cart is an array of CartItem
+  total: number;
+  cart: CartItem[];
 }
 
 const initialState: cartState = {
   cart: [],
+  total: 0,
 };
 
 export const cartSlice = createSlice({
@@ -19,8 +21,8 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<CartItem>) => {
-      // Specify the payload type
-      state.cart.push(action.payload); // Now TypeScript knows what to expect
+      state.cart.push(action.payload);
+      console.log("trying cart, 1 2 ");
     },
   },
 });

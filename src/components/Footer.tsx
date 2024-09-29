@@ -79,7 +79,9 @@ export default function Footer() {
               <Link to={"/"}>Reviews</Link>
             </li>
             <li className="sm:mt-4">
-              <Link to={"/"} className="sm:mt-4">Customer Care</Link>
+              <Link to={"/"} className="sm:mt-4">
+                Customer Care
+              </Link>
             </li>
           </ul>
         </div>

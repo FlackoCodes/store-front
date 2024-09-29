@@ -20,7 +20,7 @@ export default function NavBar() {
 
   const showLogs = () => {
     dispatch(setActive());
-  };
+  }; 
   return (
     <div>
       <div className="bg-[#3084A9] relative">
@@ -54,7 +54,7 @@ export default function NavBar() {
           </div>
         </nav>
         {isActive && <SignUp setLogin={setLogin} />}
-        {login && <Login />}
+        {login && <Login setLogin={setLogin} />}
       </div>
     </div>
   );

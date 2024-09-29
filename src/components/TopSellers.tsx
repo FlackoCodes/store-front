@@ -3,8 +3,12 @@ import { PiCrown } from "react-icons/pi";
 // import Button from "./Button";
 import { Link } from "react-router-dom";
 import SubSellers from "./SubSellers";
+import { data } from "../data";
+
 
 export default function TopSellers() {
+  console.log(data);
+
   return (
     <div className="w-[95%] my-0 mx-auto">
       <div className="text-center">

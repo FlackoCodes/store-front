@@ -1,17 +1,22 @@
 import logo from "../images/logo.png";
 import { FaRegTimesCircle } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { closeSignIn, toggleBack } from "../store/logsSlice/logSlice";
+import { setActive } from "../store/logsSlice/logSlice";
 
-export default function Login() {
+export default function Login({ setLogin }) {
   const dispatch = useDispatch();
 
-  const toggleLogs = () => {
-    dispatch(toggleBack());
-  };
+  // const toggleLogs = () => {
+  //   dispatch(toggleBack());
+  // };
+
+  const showSingUp = () => {
+    dispatch(setActive())
+    setLogin(false)
+  }
 
   const closeLogin = () => {
-    // dispatch(closeSignIn())
+    setLogin(false)
     console.log('console logged');
   }
 
@@ -47,7 +52,7 @@ export default function Login() {
           </button>
           <p className="text-[#757C86] mt-4 text-center">
             Don't have an account?
-            <span className="text-[#3084A9] ml-1 cursor-pointer">Sign up</span>
+            <span className="text-[#3084A9] ml-1 cursor-pointer" onClick={showSingUp}>Sign up</span>
           </p>
         </form>
       </div>
