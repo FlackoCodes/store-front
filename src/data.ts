@@ -9,14 +9,14 @@ export const data = [
     name: "Chocolate Velvet Cake",
     description:
       "Rich and moist chocolate cake layered with cream cheese frosting.",
-    price: "¢600.00",
+    price: 600.00,
     image: sales1,
   },
   {
     id: 2,
     name: "Lemon Meringue Tart",
     description: "Tangy lemon curd topped with fluffy meringue.",
-    price: "¢610.00",
+    price: 610.00,
     image: sales2,
   },
   {
@@ -24,14 +24,14 @@ export const data = [
     name: "Classic Red Velvet Cake",
     description:
       "Velvety cake with a hint of cocoa, topped with cream cheese frosting.",
-    price: "¢620.00",
+    price: 620.00,
     image: sales3,
   },
   {
     id: 4,
     name: "Vanilla Bean Cheesecake",
     description: "Smooth cheesecake infused with real vanilla beans.",
-    price: "¢630.00",
+    price: 630.00,
     image: sales4,
   },
   // {

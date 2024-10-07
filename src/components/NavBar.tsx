@@ -15,12 +15,13 @@ import { Link } from "react-router-dom";
 export default function NavBar() {
   const dispatch = useDispatch();
   const isActive = useSelector((state: RootState) => state.log.isActive);
+  const total = useSelector((state: RootState) => state.cart.total);
 
   const [login, setLogin] = useState(false);
 
   const showLogs = () => {
     dispatch(setActive());
-  }; 
+  };
   return (
     <div>
       <div className="bg-[#3084A9] relative">
@@ -39,10 +40,13 @@ export default function NavBar() {
               <GiHamburgerMenu className="text-xl text-[#3084A9] ml-auto" />
             </div>
           </div>
-          <div className="flex items-center gap-4 ">
+          <div className="flex items-center gap-4">
             <BiBell className="text-white" />
             <div className="flex gap-1 items-center">
-              <CgShoppingCart className="text-white" />
+              <div className="relative">
+                <CgShoppingCart className="text-white" />
+                <span className="text-orange-500 text-xs font-bold absolute -top-2 right-1">{total}</span>
+              </div>
               <span className="capitalize text-white">cart</span>
             </div>
             <button

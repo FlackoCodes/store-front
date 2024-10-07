@@ -22,6 +22,7 @@ export const cartSlice = createSlice({
   reducers: {
     addToCart: (state, action: PayloadAction<CartItem>) => {
       state.cart.push(action.payload);
+      state.total += 1;
       console.log("trying cart, 1 2 ");
     },
   },

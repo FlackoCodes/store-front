@@ -3,11 +3,10 @@ import { data } from "../../data";
 
 export default function Products() {
 
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-2 my-2">
+    <div className="bg-red-500 grid grid-cols-1 md:grid-cols-4 gap-2 my-2">
       {data.map((product) => (
-        <div key={product.id} className="flex flex-col gap-1">
+        <div key={product.id} className="flex flex-col gap-1 bg-blue-600">
           <img
             src={product.image}
             className="rounded-md w-[150px] h-[180px] md:w-[230px] md:h-[250px]"
@@ -21,7 +20,7 @@ export default function Products() {
             <span className="text-[#1F252C] text-[16px] font-bold">{product.price}</span>
           </div>
           <div className="flex items-center justify-between">
-            <Button className={"w-full my-2"} />
+            <Button className={"w-full my-2"} product={product} />
           </div>
         </div>
       ))}
