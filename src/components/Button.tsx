@@ -2,21 +2,25 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../store/cartSlice/cartSlice";
 import { RootState } from "../store/store";
+import { data } from "../data";
 
 
-export default function Button({ className }) {
 
-  // const cart = useSelector((state: RootState) => state.cart.cart);
-  const total = useSelector((state: RootState) => state.cart);
+export default function Button({ className, product }) {
+
+  const cart = useSelector((state: RootState) => state.cart.cart);
+  const total = useSelector((state: RootState) => state.cart.total);
   console.log(total);
 
   const dispatch = useDispatch()
 
+  const isInCart = cart.some((item) => item.id === data.id);
+
+
   const addProductToCart = () => {
-    // dispatch(addToCart()
-    // )
+    dispatch(addToCart()
+    )
     console.log(total);
-    console.log('trying cart 1, 2 , 3');
   }
 
   return (

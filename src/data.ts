@@ -363,7 +363,14 @@ export const data = [
   // },
 ];
 
-export const homeData = [{}];
+export const homeData = [
+  {
+    id: 201,
+    name: "",
+    description: "",
+    price: "",
+  },
+];
 
 export const promotionData = [
   {

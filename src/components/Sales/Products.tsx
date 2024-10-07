@@ -2,6 +2,8 @@ import Button from "../Button";
 import { data } from "../../data";
 
 export default function Products() {
+
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-4 gap-2 my-2">
       {data.map((product) => (
