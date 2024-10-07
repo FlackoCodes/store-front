@@ -4,9 +4,7 @@ import { addToCart } from "../store/cartSlice/cartSlice";
 import { RootState } from "../store/store";
 import { data } from "../data";
 
-
-
-export default function Button({ className, product }) {
+export default function Button({ className }) {
 
   const cart = useSelector((state: RootState) => state.cart.cart);
   const total = useSelector((state: RootState) => state.cart.total);
