@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import cake4 from "../images/cake4.jfif";
 import Button from "./Button";
 import Star from "./Star";
+import { subSellersData } from "../data";
+subSellersData
 
 export default function SubSellers() {
   const arr = new Array(5).fill(cake4);
@@ -9,28 +11,28 @@ export default function SubSellers() {
   return (
     <>
       <div className="flex flex-col md:flex-row items-center my-4 gap-3">
-        {arr.map((item, index) => (
+        {subSellersData.map((data) => (
           <div className="flex flex-col">
-            <div key={index}>
+            <div key={data.id}>
               <Link to={"/details"}>
-                <img src={item} alt="cake" className="rounded-md" />
+                <img src={data.image} alt="cake" className="rounded-md" />
               </Link>
             </div>
             <div>
               <h4 className="text-[#3084A9] font-normal text-base">
-                Lady M Confection
+                {data.name}
               </h4>
               <h5 className="text-[#1F252C] font-normal text-sm">
-                Strawberry Swirl Mile Crepe Cake
+                {data.description}
               </h5>
-              <h6 className="text-[#1F252C] font-medium text-sm">¢600.00</h6>
+              <h6 className="text-[#1F252C] font-medium text-sm">¢{data.price}</h6>
             </div>
             <div className="flex justify-between items-center mt-4">
               <div className="flex items-center">
                 <p className="text-[#1F252C]">4.6</p>
                 <Star className={"gap-0"} />
               </div>
-              <Button className={"py-1 px-1 text-sm"} />
+              <Button className={"py-1 px-1 text-sm"} product={data} />
             </div>
           </div>
         ))}
