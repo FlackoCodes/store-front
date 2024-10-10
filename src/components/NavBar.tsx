@@ -47,7 +47,7 @@ export default function NavBar() {
                 <CgShoppingCart className="text-white" />
                 <span className="text-orange-500 text-xs font-bold absolute -top-2 right-1">{total}</span>
               </div>
-              <span className="capitalize text-white">cart</span>
+              <Link to={"/cart"} className="capitalize text-white">cart</Link>
             </div>
             <button
               onClick={showLogs}

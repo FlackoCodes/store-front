@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../store/cartSlice/cartSlice";
 import { RootState } from "../store/store";
-// import { data } from "../data";
+import { useEffect } from "react";
+
 
 interface ButtonProps {
   className?: string,
@@ -16,16 +17,18 @@ interface ButtonProps {
 
 
 export default function Button({ className, product }: ButtonProps) {
-  console.log(product);
-  
+  if (!product || !product.id) {
+    console.log('no product found');
+  }
+  console.log('product', product);
+
   const cart = useSelector((state: RootState) => state.cart.cart);
   const total = useSelector((state: RootState) => state.cart.total);
-  console.log(total);
 
   const dispatch = useDispatch()
 
   const isInCart = cart.some((item) => item.id === product.id);
-  console.log(product);
+  console.log('main product', product);
 
   const addProductToCart = () => {
     if (!isInCart) {
@@ -34,10 +37,13 @@ export default function Button({ className, product }: ButtonProps) {
       console.log(total);
       console.log('cart', cart);
     }
-    console.log(product);
-    console.log(isInCart);
-
   }
+
+  useEffect(() => {
+    console.log('addding to cart', cart);
+    console.log('total', total);
+
+  }, [cart, total])
 
   return (
     <button
