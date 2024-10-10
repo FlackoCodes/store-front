@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
-import cake4 from "../images/cake4.jfif";
 import Button from "./Button";
 import Star from "./Star";
 import { subSellersData } from "../data";
-subSellersData
 
 export default function SubSellers() {
-  const arr = new Array(5).fill(cake4);
 
   return (
     <>

@@ -9,6 +9,11 @@ import vendor2 from "./images/vendor1.jpg";
 import vendor3 from "./images/vendor2.jpg";
 import vendor4 from "./images/vendor3.jpg";
 import vendor5 from "./images/vendor4.jpg";
+import sub1 from "./images/sub1.jpg";
+import sub2 from "./images/sub2.jpg";
+import sub3 from "./images/sub3.jpg";
+import sub4 from "./images/sub4.jpg";
+import sub5 from "./images/sub6.jpg";
 
 export const data = [
   {
@@ -46,27 +51,38 @@ export const data = [
 export const subSellersData = [
   {
     id: 201,
-    name: "",
-    description: "",
-    price: "",
+    name: "Lady M Confection",
+    description: "Strawberry Swirl Mile Crepe Cake",
+    price: 600,
+    image: sub1,
   },
   {
     id: 202,
-    name: "",
-    description: "",
-    price: "",
+    name: "Lady M Confection",
+    description: "Strawberry Swirl Mile Crepe Cake",
+    price: 500,
+    image: sub2,
   },
   {
     id: 203,
-    name: "",
-    description: "",
-    price: "",
+    name: "Lady M Confection",
+    description: "Strawberry Swirl Mile Crepe Cake",
+    price: 400,
+    image: sub3,
   },
   {
     id: 204,
-    name: "",
-    description: "",
-    price: "",
+    name: "Lady M Confection",
+    description: "Strawberry Swirl Mile Crepe Cake",
+    price: 550,
+    image: sub4,
+  },
+  {
+    id: 205,
+    name: "Lady M Confection",
+    description: "Strawberry Swirl Mile Crepe Cake",
+    price: 750,
+    image: sub5,
   },
 ];
 

@@ -22,7 +22,7 @@ export default function Promotions() {
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {data.map((product) => (
+        {promotionData.map((product) => (
           <div className="relative" key={product.id}>
             <img
               src={product.image}
