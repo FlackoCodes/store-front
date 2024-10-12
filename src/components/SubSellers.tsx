@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Button from "./Button";
 import Star from "./Star";
 import { subSellersData } from "../data";
@@ -11,9 +10,7 @@ export default function SubSellers() {
         {subSellersData.map((data) => (
           <div className="flex flex-col">
             <div key={data.id}>
-              <Link to={"/details"}>
-                <img src={data.image} alt="cake" className="rounded-md" />
-              </Link>
+              <img src={data.image} alt="cake" className="rounded-md" />
             </div>
             <div>
               <h4 className="text-[#3084A9] font-normal text-base">

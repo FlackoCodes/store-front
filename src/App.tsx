@@ -12,6 +12,11 @@ import About from "./pages/About";
 import FlashSales from "./pages/FlashSales";
 import Company from "./pages/Company";
 import Cart from "./pages/Cart";
+import Vendor2 from "./components/Vendors/Vendor2";
+import Vendor3 from "./components/Vendors/Vendor3";
+import Vendor4 from "./components/Vendors/Vendor4";
+import Vendor5 from "./components/Vendors/vendor5";
+
 
 function App() {
   const router = createBrowserRouter(
@@ -19,10 +24,15 @@ function App() {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/details" element={<About />} />
+        <Route path="/vendor1" element={<About />} />
+        <Route path="/vendor2" element={<Vendor2 />} />
+        <Route path="/vendor3" element={<Vendor3 />} />
+        <Route path="/vendor4" element={<Vendor4 />} />
+        <Route path="/vendor5" element={<Vendor5 />} />
         <Route path="/flash-sales" element={<FlashSales />} />
         <Route path="/about-us" element={<Company />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<Home />} />
       </Route>
     )
   );

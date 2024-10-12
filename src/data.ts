@@ -14,6 +14,7 @@ import sub2 from "./images/sub2.jpg";
 import sub3 from "./images/sub3.jpg";
 import sub4 from "./images/sub4.jpg";
 import sub5 from "./images/sub6.jpg";
+import vendAbout from "./images/about-cake - Copy.jfif";
 
 export const data = [
   {
@@ -108,25 +109,43 @@ export const vendorsData = [
     id: 11,
     name: "BARBIE'S DREAM EATS",
     image: vendor1,
+    link: "/vendor1",
   },
   {
     id: 12,
     name: "BARBIE'S CAKES BANK",
     image: vendor2,
+    link: "/vendor2",
   },
   {
     id: 13,
     name: "HERTY TASTY HOUSE",
     image: vendor3,
+    link: "/vendor3",
   },
   {
     id: 14,
     name: "JOE”S TOP PICKS",
     image: vendor4,
+    link: "/vendor4",
   },
   {
     id: 15,
     name: "HOT 100",
     image: vendor5,
+    link: "/vendor5",
+  },
+];
+
+export const vendorOne = [
+  {
+    id: 111,
+    image: vendAbout,
+    name: "barbie dream eats",
+    description: "Strawberry Swirl Mile Crepe Cake",
+    price: 600.0,
+    about:
+      "This cake is seriously GIANT! The skyscraping 20 Layer Chocolate Peanut Butter Cake features alternating layers of devil's food cake and peanut butter mascarpone to satisfy anyone's sweet tooth. It's made with high-end Valrhona chocolate and filled with peanut butter cream, and it's the perfect ending to a luxurious and romantic meal. Pair it with peanut brittle for the full experience!",
+    sub: "LAVO is a globally recognized destination for Italian cuisine, helmed by Chef Partner Ralph Scamardella, with iconic locations in New York, Las Vegas, San Diego, and Singapore.",
   },
 ];

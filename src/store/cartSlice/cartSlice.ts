@@ -9,11 +9,13 @@ interface CartItem {
 export interface cartState {
   total: number;
   cart: CartItem[];
+  quantity: number;
 }
 
 const initialState: cartState = {
   cart: [],
   total: 0,
+  quantity: 1,
 };
 
 export const cartSlice = createSlice({
