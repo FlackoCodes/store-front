@@ -50,7 +50,7 @@ export default function Footer() {
           <h3 className="font-bold mt-2">Products</h3>
           <ul className="list-none flex flex-col gap-1 md:gap-2 font-normal tracking-tight">
             <li>
-              <Link to={"/"}>About Us</Link>
+              <Link to={"/flash-sales"}>Flash Sales</Link>
             </li>
             <li>
               <Link to={"/"}>Why choose us</Link>
