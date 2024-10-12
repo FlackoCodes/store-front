@@ -28,9 +28,31 @@ export const cartSlice = createSlice({
       console.log("trying cart, 1 2 ");
       console.log(state.cart);
     },
+    clearCart: (state) => {
+      state.cart = [];
+    },
+    deleteItem: (state, action: PayloadAction<CartItem>) => {
+      state.cart.filter((item) => item.id !== action.payload.id);
+    },
+    increaseQuantity: (state) => {
+      state.quantity++;
+    },
+    decreaseQuantity: (state) => {
+      if (state.quantity > 0) {
+        state.quantity--;
+      } else {
+        return;
+      }
+    },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const {
+  addToCart,
+  clearCart,
+  deleteItem,
+  increaseQuantity,
+  decreaseQuantity,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

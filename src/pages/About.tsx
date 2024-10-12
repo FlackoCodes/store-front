@@ -1,5 +1,4 @@
 import { FaAngleRight, FaAngleDown, FaAngleUp } from "react-icons/fa6";
-import aboutCake from "../images/about-cake - Copy.jfif";
 import Star from "../components/Star";
 import { CiHeart } from "react-icons/ci";
 import Button from "../components/Button";
@@ -7,8 +6,31 @@ import SubSellers from "../components/SubSellers";
 import { Link } from "react-router-dom";
 import Contact from "../components/Contact";
 import { vendorOne } from "../data";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../store/store";
+import { decreaseQuantity, increaseQuantity } from "../store/cartSlice/cartSlice";
+import { useEffect } from "react";
+
 
 export default function About() {
+
+  const quantity = useSelector((state: RootState) => state.cart.quantity)
+  const dispatch = useDispatch()
+
+  const addUpQuantity = () => {
+    dispatch(increaseQuantity())
+  }
+  const reduceQuantity = () => {
+    dispatch(decreaseQuantity())
+  }
+
+  const disableBtn = () => quantity === 0;
+
+  useEffect(() => {
+    console.log('Quantity has changed:', quantity);
+  }, [quantity]);
+
+
   return (
     <div className="w-[96%] mx-auto">
       <div className="flex my-8 space-x-1 md:space-x-2 text-[#8B96A5] items-center">
@@ -68,10 +90,10 @@ export default function About() {
                     Quantity
                   </span>
                   <div className="flex items-center">
-                    <span className="text-[#676D76] font-normal">1</span>
+                    <span className="text-[#676D76] font-normal">{quantity}</span>
                     <div className="flex flex-col ml-2">
-                      <FaAngleUp className="text-[#676D76] w-[11px] h-[11px] cursor-pointer" />
-                      <FaAngleDown className="text-[#676D76] w-[11px] h-[11px] cursor-pointer" />
+                      <FaAngleUp className="text-[#676D76] w-[11px] h-[11px] cursor-pointer" onClick={addUpQuantity} />
+                      <FaAngleDown className="text-[#676D76] w-[11px] h-[11px] cursor-pointer" onClick={reduceQuantity} />
                     </div>
                   </div>
                 </div>
@@ -80,10 +102,10 @@ export default function About() {
                 </div>
               </div>
               <div className="flex gap-4">
-                <button className="border-none rounded-md bg-[#3084A9] text-white py-1 px-2 md:py-2 md:px-4 capitalize">
+                <button className="border-none rounded-md bg-[#3084A9] text-white py-1 px-2 md:py-2 md:px-4 capitalize" disabled={disableBtn()}>
                   Buy Now
                 </button>
-                <Button className="bg-[#C3E3F1] text-[#3084A9] px-8" product={data} />
+                <Button className="bg-[#C3E3F1] text-[#3084A9] px-8" product={data} disabled={disableBtn} />
               </div>
             </div>
           </div>

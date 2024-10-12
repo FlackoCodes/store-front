@@ -13,6 +13,7 @@ interface ButtonProps {
     description: string,
     image: string,
   };
+  disabled?: () => boolean
 }
 
 
@@ -24,11 +25,15 @@ export default function Button({ className, product }: ButtonProps) {
 
   const cart = useSelector((state: RootState) => state.cart.cart);
   const total = useSelector((state: RootState) => state.cart.total);
+  const quantity = useSelector((state: RootState) => state.cart.quantity);
 
   const dispatch = useDispatch()
 
   const isInCart = cart.some((item) => item.id === product.id);
   console.log('main product', product);
+
+  const disableBtn = () => quantity === 0;
+
 
   const addProductToCart = () => {
     if (!isInCart) {
@@ -47,6 +52,7 @@ export default function Button({ className, product }: ButtonProps) {
 
   return (
     <button
+      disabled={disableBtn()}
       className={`bg-[#C3E3F1] capitalize border-none rounded-md text-[#3084A9] py-1 px-3 ${className}`}
       onClick={addProductToCart}
     >
