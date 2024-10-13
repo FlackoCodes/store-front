@@ -10,6 +10,10 @@
     padding: 0;
 }
 
+body {
+    color: #F5F7F8;
+}
+
 h1 {
     font-family: "Roboto", sans-serif;
     /* letter-spacing: -1px; */

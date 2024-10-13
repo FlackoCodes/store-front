@@ -17,7 +17,7 @@ export default function Products() {
             <p className="text-[#1F252C] text-[16px] tracking-tight">
               {product.description}
             </p>
-            <span className="text-[#1F252C] text-[16px] font-bold">{product.price}</span>
+            <span className="text-[#1F252C] text-[16px] font-bold">¢{product.price}</span>
           </div>
           <div className="flex items-center justify-between">
             <Button className={"w-full my-2"} product={product} />
