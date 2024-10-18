@@ -2,13 +2,12 @@ import { GiCupcake } from "react-icons/gi";
 import cake5 from "../images/cake-5.jfif"; //
 import SubSellers from "./SubSellers";
 
+
 export default function Categories() {
-  // Define the component as a variable
   const CupcakeIcon = GiCupcake;
 
-  // Create an array of icons
-  const cakes = new Array(10).fill(CupcakeIcon);
-
+  const cakes: object[] = new Array(10).fill(CupcakeIcon);
+  console.log(cakes)
   const catCakes = new Array(3).fill(cake5);
 
   return (
@@ -22,11 +21,11 @@ export default function Categories() {
         {cakes.map((CakeComponent, index) => (
           <div
             key={index}
-            className="bg-[#D4EEE2] rounded-lg text-center py-2 px-2 flex flex-col items-center"
+            className="bg-[#D4EEE2] rounded-lg text-center py-2 px-2 flex flex-col items-center cursor-pointer"
           >
             <CakeComponent />
             <small className="text-xs font-normal">Carrot Cake</small>
-          </div>
+          </div>                                       
         ))}
       </div>
       <div className="grid grid-cols-3 gap-3">
