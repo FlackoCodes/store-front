@@ -4,7 +4,6 @@ import cakeBg from "../images/cake-background.jfif";
 export default function CTA() {
   return (
     <div className="relative bg-cover bg-center h-[561px]" style={{ backgroundImage: `url(${cakeBg})` }}>
-      {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-50" />
 
       <div className="grid place-content-center min-h-[100vh] relative z-10">

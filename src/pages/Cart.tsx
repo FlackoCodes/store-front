@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux"
 import { RootState } from "../store/store";
+import ShoppingCart from "../components/Cart/ShoppingCart";
 
 
 export default function Cart() {
@@ -8,21 +9,8 @@ export default function Cart() {
 
     return (
         <div>
-            <h2>Your Cart</h2>
-            {cart.length === 0 ? (
-                <p>Your cart is empty.</p>
-            ) : (
-                <>
-                    <ul>
-                        {cart.map((item) => (
-                            <li key={item.id}>
-                                <h3>{item.name}</h3>
-                                <p>Price:</p>
-                            </li>
-                        ))}
-                    </ul>
-                </>
-            )}
-        </div>
-    );
+            {cart.length ? <ShoppingCart /> :
+                <div>Your Cart is empty</div>
+            }
+        </div>)
 };
