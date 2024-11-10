@@ -27,14 +27,15 @@ export const cartSlice = createSlice({
     addToCart: (state, action: PayloadAction<CartItem>) => {
       state.cart.push(action.payload);
       state.total += 1;
-      console.log("trying cart, 1 2 ");
       console.log(state.cart);
     },
     clearCart: (state) => {
       state.cart = [];
     },
     deleteItem: (state, action: PayloadAction<CartItem>) => {
-      state.cart.filter((item) => item.id !== action.payload.id);
+      state.cart = state.cart.filter((item) => item.id !== action.payload.id);
+      state.total--;
+      console.log("delete item");
     },
     increaseQuantity: (state) => {
       state.quantity++;

@@ -1,10 +1,15 @@
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "../../store/store"
 import { Link } from "react-router-dom"
-
+import { clearCart, deleteItem } from "../../store/cartSlice/cartSlice"
 export default function ShoppingCart() {
 
     const cart = useSelector((state: RootState) => state.cart.cart)
+    const dispatch = useDispatch()
+
+    const handleDelete = (item: any) => {
+        dispatch(deleteItem(item))
+    }
 
     return (
         <>
@@ -27,20 +32,20 @@ export default function ShoppingCart() {
                                                     {item.description && <p>{item.description}</p>}
                                                 </div>
                                             </div>
-                                            <div>
+                                            <div className="flex gap-2 items-center">
                                                 <span className="text-[#1F252C]">{item.price}</span>
+                                                <button type="button" className="bg-red-500 rounded-md py-1 px-2 text-yellow-300 text-base" onClick={() => handleDelete(item)}>Delete</button>
                                             </div>
                                         </div>
                                     </div>)
                                 }
                             </div>
                         </div>
-
                     </div>
                     <div className="shadow-md p-2">
                         <div className="flex flex-col gap-4">
                             <h3>Subtotal  ({cart.length} items): </h3>
-                            <Link to={""} className="bg-yellow-400 rounded-full text-center py-1.5 px-0.5">
+                            <Link to={"/checkout"} className="bg-yellow-400 rounded-full text-center py-1.5 px-0.5">
                                 Proceed to payment
                             </Link>
                         </div>

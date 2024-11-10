@@ -16,6 +16,7 @@ import Vendor2 from "./components/Vendors/Vendor2";
 import Vendor3 from "./components/Vendors/Vendor3";
 import Vendor4 from "./components/Vendors/Vendor4";
 import Vendor5 from "./components/Vendors/vendor5";
+import Checkout from "./components/Cart/Checkout";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/flash-sales" element={<FlashSales />} />
         <Route path="/about-us" element={<Company />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route path="*" element={<Home />} />
       </Route>
     )
