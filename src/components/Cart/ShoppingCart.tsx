@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { RootState } from "../../store/store"
 import { Link } from "react-router-dom"
-import { clearCart, deleteItem } from "../../store/cartSlice/cartSlice"
+import { deleteItem } from "../../store/cartSlice/cartSlice"
 export default function ShoppingCart() {
 
     const cart = useSelector((state: RootState) => state.cart.cart)
@@ -10,6 +10,12 @@ export default function ShoppingCart() {
     const handleDelete = (item: any) => {
         dispatch(deleteItem(item))
     }
+
+
+    const totalPrice = cart.reduce(function (prev, next) {
+        return prev + next.price;
+    }, 0);
+    console.log(totalPrice);
 
     return (
         <>
@@ -44,7 +50,7 @@ export default function ShoppingCart() {
                     </div>
                     <div className="shadow-md p-2">
                         <div className="flex flex-col gap-4">
-                            <h3>Subtotal  ({cart.length} items): </h3>
+                            <h3>Subtotal  ({cart.length} items): {totalPrice && totalPrice} </h3>
                             <Link to={"/checkout"} className="bg-yellow-400 rounded-full text-center py-1.5 px-0.5">
                                 Proceed to payment
                             </Link>
