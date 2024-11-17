@@ -4,15 +4,9 @@ import SubSellers from "./SubSellers";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import car1 from "../images/car1.jpg"
 import car2 from "../images/car2.jpg"
-import car3 from "../images/sub4.jpg"
-import car4 from "../images/car4.jpg"
-import car5 from "../images/sub2.jpg"
+
 
 export default function Categories() {
-  // const CupcakeIcon = GiCupcake;
-
-  // const cakes = new Array(10).fill(CupcakeIcon);
-  // const catCakes = new Array(3).fill(cake5);
 
   return (
     <>

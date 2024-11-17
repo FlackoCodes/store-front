@@ -1,27 +1,49 @@
-import { Link } from "react-router-dom";
 import { RootState } from "../../store/store"
 import { useSelector } from "react-redux"
+import { useState } from "react";
+import { PAYSTACK_API } from "../../constants";
+import { PaystackButton } from "react-paystack";
 
 
 
 function Checkout() {
 
     const cart = useSelector((state: RootState) => state.cart.cart)
+    const [phone, setPhone] = useState(0)
+    const [email, setEmail] = useState("")
+    const [name, setName] = useState("")
+    const [address, SetAddress] = useState("")
+
+
 
     const totalPrice = cart.reduce(function (prev, next) {
         return prev + next.price;
     }, 0);
 
     const shipping: number = 50;
-
     const grandTotal = totalPrice + shipping;
+    const amount = grandTotal * 100;
 
+
+    const componentProps = {
+        email,
+        amount,
+        metaData: {
+            name,
+            phone
+        },
+        currency: "GHS",
+        publicKey: PAYSTACK_API,
+        text: "Continue and Pay",
+        onSuccess: () => alert("Thanks, see you again"),
+        className: "bg-amber-800 text-white uppercase font-mediumtext- sm py-2 px - 6 roundeds shadow - md transition - all duration - 300ease -in -out hover: bg - amber - 700 hover: shadow - lg focus: outline - nonfocus: ring - 2 focus: ring - amber - 500"
+    }
 
 
     return (
-        <div className="w-[80%] my-0 mx-auto bg-white">
+        <div className="w-[75%] my-0 mx-auto bg-white">
             <div className="grid grid-cols-[65%_35%] gap-2 my-6">
-                <div className="py-2 px-4 shadow-md rounded">
+                <div className="py-2 px-4 shadow-lg rounded">
                     <header className="my-8">
                         <h1 className="uppercase text-black font-bold text-lg tracking-tight">checkout</h1>
                     </header>
@@ -33,8 +55,10 @@ function Checkout() {
                             <div>
                                 <label htmlFor="name" className="block capitalize font-bold my-1">name</label>
                                 <input
+                                    value={name}
                                     type="text"
                                     id="name"
+                                    onChange={(e) => setName(e.target.value)}
                                     placeholder="Enter your name"
                                     className="px-4 py-2 border border-gray-300 rounded-md 
                                     focus:outline-none focus:border-blue-500 w-[300px]"
@@ -43,6 +67,8 @@ function Checkout() {
                             <div>
                                 <label htmlFor="email" className="block capitalize font-bold my-1">email</label>
                                 <input
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     type="email"
                                     id="email"
                                     placeholder="Enter your email"
@@ -52,7 +78,9 @@ function Checkout() {
                             <div>
                                 <label htmlFor="phone" className="block capitalize font-bold my-1">name</label>
                                 <input
-                                    type="number"
+                                    value={phone}
+                                    onChange={(e) => setPhone(e.target.value)}
+                                    type="tel"
                                     id="phone"
                                     placeholder="Enter your phone"
                                     className="px-4 py-2 border border-gray-300 rounded-md 
@@ -67,7 +95,7 @@ function Checkout() {
                         </div>
                         <div>
                             <label htmlFor="address" className="block capitalize font-bold my-1">address</label>
-                            <input type="text" placeholder="your adress..." className="px-4 py-2 border border-gray-300 rounded-md 
+                            <input value={address} onChange={(e) => SetAddress(e.target.value)} type="text" placeholder="your adress..." className="px-4 py-2 border border-gray-300 rounded-md 
                                     focus:outline-none focus:border-blue-500 w-full" />
                         </div>
                         <div className="grid grid-cols-[1fr_1fr] gap-y-4 items-center mt-4">
@@ -103,7 +131,7 @@ function Checkout() {
                         </div>
                     </form>
                 </div>
-                <div className="p-2 shadow-md rounded">
+                <div className="p-2 shadow-lg rounded h-fit">
                     <header className="my-8">
                         <h1 className="uppercase text-black font-bold text-lg tracking-tight">summary</h1>
                     </header>
@@ -135,12 +163,7 @@ function Checkout() {
                                 <span>GHS {grandTotal}</span>
                             </div>
                             <div className="my-4">
-                                <Link
-                                    to="/"
-                                    className="bg-amber-800 text-white uppercase font-medium text-sm py-2 px-6 roundeds shadow-md transition-all duration-300 ease-in-out hover:bg-amber-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
-                                >
-                                    Continue and Pay
-                                </Link>
+                                <PaystackButton  {...componentProps} />
                             </div>
                         </div>
                             : <span className="text-center text-lg font-bold">cart is empty</span>}

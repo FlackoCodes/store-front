@@ -15,7 +15,6 @@ export default function ShoppingCart() {
     const totalPrice = cart.reduce(function (prev, next) {
         return prev + next.price;
     }, 0);
-    console.log(totalPrice);
 
     return (
         <>

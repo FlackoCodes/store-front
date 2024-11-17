@@ -2,7 +2,7 @@ import { FaArrowLeftLong, FaArrowRight, FaCediSign } from "react-icons/fa6";
 // import cakeProm from "../images/cake3.jfif";
 import Star from "./Star";
 import Button from "./Button";
-import { data, promotionData } from "../data";
+import { promotionData } from "../data";
 
 const { id } = promotionData[0]
 console.log('id', id);

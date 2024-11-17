@@ -1,0 +1,1 @@
+export const PAYSTACK_API = "pk_test_280a0a4e8428eb0024d2019bf2053bcdd85daf85"
