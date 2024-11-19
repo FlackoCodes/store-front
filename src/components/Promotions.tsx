@@ -1,13 +1,59 @@
 import { FaArrowLeftLong, FaArrowRight, FaCediSign } from "react-icons/fa6";
-// import cakeProm from "../images/cake3.jfif";
 import Star from "./Star";
 import Button from "./Button";
 import { promotionData } from "../data";
-
-const { id } = promotionData[0]
-console.log('id', id);
+import { useState, useRef, useEffect } from "react";
 
 export default function Promotions() {
+
+  // useRef hook ---> allows to store mutable values that does not cause re-render when updated
+
+ 
+  const interval = useRef(null);
+  const [days, setDays] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
+  const [seconds, setSeconds] = useState(0);
+
+  const startTimer = () => {
+    const timerDate = new Date("February 27 2025 00:00:00").getTime();
+
+    interval.current = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = timerDate - now;
+
+      // Calculate the time remaining
+      const remainingDays = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const remainingHours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const remainingMinutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const remainingSeconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // If the countdown is finished
+      if (distance < 0) {
+        clearInterval(interval.current);
+        setDays(0);
+        setHours(0);
+        setMinutes(0);
+        setSeconds(0);
+      } else {
+        // Update the state with the remaining time
+        setDays(remainingDays);
+        setHours(remainingHours);
+        setMinutes(remainingMinutes);
+        setSeconds(remainingSeconds);
+      }
+    }, 1000);
+  };
+
+  useEffect(() => {
+    startTimer();
+
+    // Cleanup on unmount
+    return () => {
+      clearInterval(interval.current);
+    };
+  }, []);
+
   return (
     <div className="w-[95%] my-0 mx-auto mb-5">
       <div className="flex justify-between my-4">
@@ -32,28 +78,28 @@ export default function Promotions() {
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <div className="grid grid-cols-4 gap-2 md:gap-4 w-full max-w-[280px] md:max-w-xs">
                 <div className="bg-white p-2 rounded-md flex flex-col items-center text-center">
-                  <h4 className="text-sm md:text-lg font-semibold text-[#3084A9]">
+                  <h4 className="text-sm font-semibold text-[#3084A9]">
                     Days
                   </h4>
-                  <p className="text-xl text-black">01</p>
+                  <p className="text-xl text-black">{days}</p>
                 </div>
                 <div className="bg-white p-2 rounded-md flex flex-col items-center text-center">
-                  <h4 className="text-sm md:text-lg font-semibold text-[#3084A9]">
+                  <h4 className="text-sm font-semibold text-[#3084A9]">
                     Hours
                   </h4>
-                  <p className="text-xl text-black">12</p>
+                  <p className="text-xl text-black">{hours}</p>
                 </div>
                 <div className="bg-white p-2 rounded-md flex flex-col items-center text-center">
-                  <h4 className="text-sm md:text-lg font-semibold text-[#3084A9]">
+                  <h4 className="text-sm font-semibold text-[#3084A9]">
                     Minutes
                   </h4>
-                  <p className="text-xl text-black">30</p>
+                  <p className="text-xl text-black">{minutes}</p>
                 </div>
                 <div className="bg-white p-2 rounded-md flex flex-col items-center text-center">
-                  <h4 className="text-sm md:text-lg font-semibold text-[#3084A9]">
+                  <h4 className="text-sm font-semibold text-[#3084A9]">
                     Seconds
                   </h4>
-                  <p className="text-xl text-black">45</p>
+                  <p className="text-xl text-black">{seconds}</p>
                 </div>
               </div>
               {/* Rating Section */}
