@@ -8,8 +8,8 @@ export default function Promotions() {
 
   // useRef hook ---> allows to store mutable values that does not cause re-render when updated
 
- 
-  const interval = useRef(null);
+
+  const interval = useRef();
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -22,13 +22,11 @@ export default function Promotions() {
       const now = new Date().getTime();
       const distance = timerDate - now;
 
-      // Calculate the time remaining
       const remainingDays = Math.floor(distance / (1000 * 60 * 60 * 24));
       const remainingHours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const remainingMinutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const remainingSeconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      // If the countdown is finished
       if (distance < 0) {
         clearInterval(interval.current);
         setDays(0);
@@ -36,7 +34,6 @@ export default function Promotions() {
         setMinutes(0);
         setSeconds(0);
       } else {
-        // Update the state with the remaining time
         setDays(remainingDays);
         setHours(remainingHours);
         setMinutes(remainingMinutes);
@@ -48,7 +45,6 @@ export default function Promotions() {
   useEffect(() => {
     startTimer();
 
-    // Cleanup on unmount
     return () => {
       clearInterval(interval.current);
     };

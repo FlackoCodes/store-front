@@ -2,8 +2,15 @@ import logo from "../images/logo.png";
 import { FaRegTimesCircle } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { toggleBack } from "../store/logsSlice/logSlice";
+import { useState } from "react";
 
 export default function SignUp({ setLogin }) {
+
+  const [fullName, setFullName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+
   const dispatch = useDispatch();
 
   const showLogin = () => {
@@ -33,31 +40,36 @@ export default function SignUp({ setLogin }) {
 
         <form>
           <input
+            value={fullName}
+            onChange={(e) => { setFullName(e.target.value) }}
             type="text"
             className="rounded-md outline-none border-gray-300 border-[1.5px] w-full py-2 px-3 mb-4"
             placeholder="Full name"
           />
           <input
-            type="text"
+            onChange={(e) => { setEmail(e.target.value) }}
+            type="email"
             className="rounded-md outline-none border-gray-300 border-[1.5px] w-full py-2 px-3 mb-4"
-            placeholder="Email address/phone"
+            placeholder="Email address / phone"
           />
           <input
+            value={password}
+            onChange={(e) => { setPassword(e.target.value) }}
             type="password"
             className="rounded-md outline-none border-gray-300 border-[1.5px] w-full py-2 px-3 mb-4"
             placeholder="Password"
           />
-          <input
+          {/* <input
             type="password"
             className="rounded-md outline-none border-gray-300 border-[1.5px] w-full py-2 px-3 mb-4"
             placeholder="Re-enter password"
-          />
-          <div className="flex gap-2 items-center mb-6 mt-2">
+          /> */}
+          {/* <div className="flex gap-2 items-center mb-6 mt-2">
             <input type="radio" name="privacy" id="privacy" />
             <p className="text-black font-medium text-sm">
               I agree to the Terms of Service and Privacy Policy
             </p>
-          </div>
+          </div> */}
           <button className="w-full py-2 px-4 bg-[#3084A9] text-white rounded-md capitalize">
             Create Account
           </button>
