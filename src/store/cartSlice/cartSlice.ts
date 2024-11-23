@@ -27,7 +27,7 @@ export const cartSlice = createSlice({
     addToCart: (state, action: PayloadAction<CartItem>) => {
       state.cart.push(action.payload);
       state.total += 1;
-      console.log(state.cart);
+      // console.log(state.cart);
     },
     clearCart: (state) => {
       state.cart = [];
@@ -35,7 +35,7 @@ export const cartSlice = createSlice({
     deleteItem: (state, action: PayloadAction<CartItem>) => {
       state.cart = state.cart.filter((item) => item.id !== action.payload.id);
       state.total--;
-      console.log("delete item");
+      // console.log("delete item");
     },
     increaseQuantity: (state) => {
       state.quantity++;

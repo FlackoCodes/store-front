@@ -19,9 +19,9 @@ interface ButtonProps {
 
 export default function Button({ className, product }: ButtonProps) {
   if (!product || !product.id) {
-    console.log('no product found');
+    // console.log('no product found');
   }
-  console.log('product', product);
+  // console.log('product', product);
 
   const cart = useSelector((state: RootState) => state.cart.cart);
   const total = useSelector((state: RootState) => state.cart.total);
@@ -30,7 +30,7 @@ export default function Button({ className, product }: ButtonProps) {
   const dispatch = useDispatch()
 
   const isInCart = cart.some((item) => item.id === product.id);
-  console.log('main product', product);
+  // console.log('main product', product);
 
   const disableBtn = () => quantity === 0;
 
@@ -38,15 +38,15 @@ export default function Button({ className, product }: ButtonProps) {
   const addProductToCart = () => {
     if (!isInCart) {
       dispatch(addToCart(product))
-      console.log('product', product);
-      console.log(total);
-      console.log('cart', cart);
+      // console.log('product', product);
+      // console.log(total);
+      // console.log('cart', cart);
     }
   }
 
   useEffect(() => {
-    console.log('addding to cart', cart);
-    console.log('total', total);
+    // console.log('addding to cart', cart);
+    // console.log('total', total);
 
   }, [cart, total])
 

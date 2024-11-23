@@ -3,13 +3,28 @@ import { FaRegTimesCircle } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { toggleBack } from "../store/logsSlice/logSlice";
 import { useState } from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase-config";
+
 
 export default function SignUp({ setLogin }) {
 
-  const [fullName, setFullName] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
+  const register = async (e) => {
+    e.preventDefault()
+    try {
+      const user = await createUserWithEmailAndPassword(auth, email, password)
+      console.log(user.user.email);
+
+    } catch (error) {
+      console.log(error);
+
+    }
+  }
+
+  const logout = async () => { }
 
   const dispatch = useDispatch();
 
@@ -38,19 +53,20 @@ export default function SignUp({ setLogin }) {
           <h1 className="text-lg font-semibold">Create an account</h1>
         </header>
 
-        <form>
-          <input
+        <form onSubmit={register}>
+          {/* <input
             value={fullName}
             onChange={(e) => { setFullName(e.target.value) }}
             type="text"
             className="rounded-md outline-none border-gray-300 border-[1.5px] w-full py-2 px-3 mb-4"
             placeholder="Full name"
-          />
+          /> */}
           <input
+            value={email}
             onChange={(e) => { setEmail(e.target.value) }}
             type="email"
             className="rounded-md outline-none border-gray-300 border-[1.5px] w-full py-2 px-3 mb-4"
-            placeholder="Email address / phone"
+            placeholder="Email address"
           />
           <input
             value={password}
@@ -70,7 +86,9 @@ export default function SignUp({ setLogin }) {
               I agree to the Terms of Service and Privacy Policy
             </p>
           </div> */}
-          <button className="w-full py-2 px-4 bg-[#3084A9] text-white rounded-md capitalize">
+          <button
+            onClick={register}
+            className="w-full py-2 px-4 bg-[#3084A9] text-white rounded-md capitalize">
             Create Account
           </button>
           <p className="text-[#757C86] mt-4 text-center">
