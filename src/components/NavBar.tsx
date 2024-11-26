@@ -22,23 +22,18 @@ export default function NavBar() {
   const showLogs = () => {
     dispatch(setActive());
   };
+
   return (
     <div>
       <div className="bg-[#3084A9] relative">
-        <nav className="flex flex-col lg:flex-row gap-2 lg:justify-between items-center w-[90%] my-0 mx-auto py-4">
-          <div className="flex items-center justify-between w-full sm:w-auto">
+        <nav className="flex justify-between items-center w-[90%] my-0 mx-auto py-4">
+          <div className="">
             <Link to={"/"}>
               <img className="w-[200px] h-[66px]" src={logo} alt="logo" />
             </Link>
-            <div className="flex items-center border lg:ml-[300px] border-gray-300 rounded-lg px-3 py-2 max-w-md bg-white w-full sm:">
-              <BiSearch className="text-xl text-[#3084A9] mr-2" />
-              <input
-                type="text"
-                placeholder="search"
-                className="w-full p-1 outline-none"
-              />
-              <GiHamburgerMenu className="text-xl text-[#3084A9] ml-auto" />
-            </div>
+          </div>
+          <div className="hidden md:block">
+            <h1 className="font-serif text-4xl font-bold text-white">cakes and more</h1>
           </div>
           <div className="flex items-center gap-4">
             <BiBell className="text-white" />
@@ -63,3 +58,13 @@ export default function NavBar() {
     </div>
   );
 }
+
+{/* <div className="flex items-center border lg:ml-[300px] border-gray-300 rounded-lg px-3 py-2 max-w-md bg-white w-full sm:">
+              <BiSearch className="text-xl text-[#3084A9] mr-2" />
+              <input
+                type="text"
+                placeholder="search"
+                className="w-full p-1 outline-none"
+              />
+              <GiHamburgerMenu className="text-xl text-[#3084A9] ml-auto" />
+            </div> */}

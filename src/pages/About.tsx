@@ -26,7 +26,7 @@ export default function About() {
 
 
   useEffect(() => {
-    console.log('Quantity has changed:', quantity);
+    // console.log('Quantity has changed:', quantity);
   }, [quantity]);
 
 

@@ -87,7 +87,7 @@ export default function SignUp({ setLogin }) {
             </p>
           </div> */}
           <button
-            onClick={register}
+            type="submit"
             className="w-full py-2 px-4 bg-[#3084A9] text-white rounded-md capitalize">
             Create Account
           </button>
