@@ -1,6 +1,5 @@
 import { useState } from "react";
 import logo from "../images/logo.png";
-import { BiBell } from "react-icons/bi";
 import { CgShoppingCart } from "react-icons/cg";
 import Login from "./Login";
 
@@ -9,6 +8,8 @@ import { RootState } from "../store/store";
 import { setActive } from "../store/logsSlice/logSlice";
 import SignUp from "./SignUp";
 import { Link } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase-config";
 
 export default function NavBar({ user }) {
   const dispatch = useDispatch();
@@ -21,6 +22,10 @@ export default function NavBar({ user }) {
     dispatch(setActive());
   };
 
+  async function logout() {
+    await signOut(auth)
+  }
+
   return (
     <div>
       <div className="bg-[#3084A9] relative">
@@ -31,10 +36,9 @@ export default function NavBar({ user }) {
             </Link>
           </div>
           <div className="hidden md:block">
-            <h1 className="font-serif text-4xl font-bold text-white">cakes and more</h1>
+            <h1 className="font-serif md:text-2xl lg:text-4xl font-bold text-white banner">cakes and more</h1>
           </div>
-          <div className="flex items-center gap-4">
-            <BiBell className="text-white" />
+          <div className="flex items-center gap-3">
             <div className="flex gap-1 items-center">
               <div className="relative">
                 <CgShoppingCart className="text-white" />
@@ -43,14 +47,20 @@ export default function NavBar({ user }) {
               <Link to={"/cart"} className="capitalize text-white">cart</Link>
             </div>
             {
-              user ? <p className="text-white font-serif text-lg font-bold">welcome {user.displayName || "User"}</p> : <button
+              user ? <div className="flex items-center gap-x-3">
+                <p className="text-white font-serif text-sm md:text-lg font-bold ml-2">Hello, {user.displayName || "User"}
+                </p>
+                <button
+                  onClick={logout}
+                  className="border-none rounded-sm bg-white text-[#3084A9] py-0.5 px-1.5 md:py-1 md:px-4 capitalize"
+                >logout</button>
+              </div> : <button
                 onClick={showLogs}
                 className="border-none rounded-sm bg-white text-[#3084A9] py-1 px-3 capitalize"
               >
                 login/signup
               </button>
             }
-
           </div>
         </nav>
         {isActive && <SignUp setLogin={setLogin} />}

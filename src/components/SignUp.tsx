@@ -9,7 +9,7 @@ import { updateProfile } from "firebase/auth";
 
 export default function SignUp({ setLogin }) {
 
-  const [firstName, setFirstName] = useState(""); 
+  const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -21,10 +21,9 @@ export default function SignUp({ setLogin }) {
       const user = userCredential.user;
 
       await updateProfile(user, {
-        displayName: firstName, 
+        displayName: firstName,
       });
 
-      console.log(user.email); 
 
       toggleLogs();
     } catch (error) {
@@ -95,6 +94,9 @@ export default function SignUp({ setLogin }) {
               Sign in here
             </span>
           </p>
+          <div className="text-center">
+            <span className="text-red-500 font-mono text-base font-bold">Invalid credentials</span>
+          </div>
         </form>
       </div>
     </div>
