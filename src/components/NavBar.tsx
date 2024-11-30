@@ -12,7 +12,7 @@ import { setActive } from "../store/logsSlice/logSlice";
 import SignUp from "./SignUp";
 import { Link } from "react-router-dom";
 
-export default function NavBar() {
+export default function NavBar({ user }) {
   const dispatch = useDispatch();
   const isActive = useSelector((state: RootState) => state.log.isActive);
   const total = useSelector((state: RootState) => state.cart.total);
@@ -44,12 +44,15 @@ export default function NavBar() {
               </div>
               <Link to={"/cart"} className="capitalize text-white">cart</Link>
             </div>
-            <button
-              onClick={showLogs}
-              className="border-none rounded-sm bg-white text-[#3084A9] py-1 px-3 capitalize"
-            >
-              login/signup
-            </button>
+            {
+              user ? <p>hello {user.email}</p> : <button
+                onClick={showLogs}
+                className="border-none rounded-sm bg-white text-[#3084A9] py-1 px-3 capitalize"
+              >
+                login/signup
+              </button>
+            }
+
           </div>
         </nav>
         {isActive && <SignUp setLogin={setLogin} />}

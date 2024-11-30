@@ -5,7 +5,8 @@ import { setActive } from "../store/logsSlice/logSlice";
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase-config";
-
+import { useNavigate } from "react-router-dom";
+useNavigate
 
 export default function Login({ setLogin }) {
 
@@ -13,11 +14,18 @@ export default function Login({ setLogin }) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
+  const navigate = useNavigate()
+
   const login = async (e) => {
     e.preventDefault()
     try {
       const user = await (signInWithEmailAndPassword(auth, email, password))
       console.log(user);
+
+      navigate("/")
+
+      closeLogin()
+
     } catch (error) {
       console.log(error)
     }

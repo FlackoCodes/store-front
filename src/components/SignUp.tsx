@@ -5,6 +5,7 @@ import { toggleBack } from "../store/logsSlice/logSlice";
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase-config";
+import { useNavigate } from "react-router-dom";
 
 
 export default function SignUp({ setLogin }) {
@@ -12,11 +13,17 @@ export default function SignUp({ setLogin }) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
+  const navigate = useNavigate()
+
   const register = async (e) => {
     e.preventDefault()
     try {
       const user = await createUserWithEmailAndPassword(auth, email, password)
       console.log(user.user.email);
+
+      navigate("/")
+
+      toggleLogs()
 
     } catch (error) {
       console.log(error);
@@ -24,7 +31,6 @@ export default function SignUp({ setLogin }) {
     }
   }
 
-  const logout = async () => { }
 
   const dispatch = useDispatch();
 
@@ -36,6 +42,8 @@ export default function SignUp({ setLogin }) {
   const toggleLogs = () => {
     dispatch(toggleBack());
   };
+
+
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">

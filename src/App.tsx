@@ -15,7 +15,7 @@ import Cart from "./pages/Cart";
 import Vendor2 from "./components/Vendors/Vendor2";
 import Vendor3 from "./components/Vendors/Vendor3";
 import Vendor4 from "./components/Vendors/Vendor4";
-import Vendor5 from "./components/Vendors/vendor5";
+import Vendor5 from "./components/Vendors/Vendor5";
 import Checkout from "./components/Cart/Checkout";
 
 
