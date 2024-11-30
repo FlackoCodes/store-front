@@ -1,9 +1,7 @@
-//
 import { useState } from "react";
 import logo from "../images/logo.png";
-import { BiBell, BiSearch } from "react-icons/bi";
+import { BiBell } from "react-icons/bi";
 import { CgShoppingCart } from "react-icons/cg";
-import { GiHamburgerMenu } from "react-icons/gi";
 import Login from "./Login";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -45,7 +43,7 @@ export default function NavBar({ user }) {
               <Link to={"/cart"} className="capitalize text-white">cart</Link>
             </div>
             {
-              user ? <p>hello {user.email}</p> : <button
+              user ? <p className="text-white font-serif text-lg font-bold">welcome {user.displayName || "User"}</p> : <button
                 onClick={showLogs}
                 className="border-none rounded-sm bg-white text-[#3084A9] py-1 px-3 capitalize"
               >

@@ -1,36 +1,36 @@
+import { useState } from "react";
 import logo from "../images/logo.png";
 import { FaRegTimesCircle } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { toggleBack } from "../store/logsSlice/logSlice";
-import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase-config";
-import { useNavigate } from "react-router-dom";
-
+import { updateProfile } from "firebase/auth";
 
 export default function SignUp({ setLogin }) {
 
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-
-  const navigate = useNavigate()
+  const [firstName, setFirstName] = useState(""); 
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const register = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
+
     try {
-      const user = await createUserWithEmailAndPassword(auth, email, password)
-      console.log(user.user.email);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
 
-      navigate("/")
+      await updateProfile(user, {
+        displayName: firstName, 
+      });
 
-      toggleLogs()
+      console.log(user.email); 
 
+      toggleLogs();
     } catch (error) {
-      console.log(error);
-
+      console.error(error); // Handle errors during sign-up
     }
-  }
-
+  };
 
   const dispatch = useDispatch();
 
@@ -42,8 +42,6 @@ export default function SignUp({ setLogin }) {
   const toggleLogs = () => {
     dispatch(toggleBack());
   };
-
-
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
@@ -62,13 +60,13 @@ export default function SignUp({ setLogin }) {
         </header>
 
         <form onSubmit={register}>
-          {/* <input
-            value={fullName}
-            onChange={(e) => { setFullName(e.target.value) }}
+          <input
+            value={firstName}
+            onChange={(e) => { setFirstName(e.target.value) }}
             type="text"
             className="rounded-md outline-none border-gray-300 border-[1.5px] w-full py-2 px-3 mb-4"
             placeholder="Full name"
-          /> */}
+          />
           <input
             value={email}
             onChange={(e) => { setEmail(e.target.value) }}
@@ -83,17 +81,6 @@ export default function SignUp({ setLogin }) {
             className="rounded-md outline-none border-gray-300 border-[1.5px] w-full py-2 px-3 mb-4"
             placeholder="Password"
           />
-          {/* <input
-            type="password"
-            className="rounded-md outline-none border-gray-300 border-[1.5px] w-full py-2 px-3 mb-4"
-            placeholder="Re-enter password"
-          /> */}
-          {/* <div className="flex gap-2 items-center mb-6 mt-2">
-            <input type="radio" name="privacy" id="privacy" />
-            <p className="text-black font-medium text-sm">
-              I agree to the Terms of Service and Privacy Policy
-            </p>
-          </div> */}
           <button
             type="submit"
             className="w-full py-2 px-4 bg-[#3084A9] text-white rounded-md capitalize">
