@@ -28,7 +28,7 @@ export default function SignUp({ setLogin }) {
 
       toggleLogs();
     } catch (error) {
-      console.error(error); // Handle errors during sign-up
+      console.error(error);
     }
   };
 
@@ -65,7 +65,7 @@ export default function SignUp({ setLogin }) {
             onChange={(e) => { setFirstName(e.target.value) }}
             type="text"
             className="rounded-md outline-none border-gray-300 border-[1.5px] w-full py-2 px-3 mb-4"
-            placeholder="Full name"
+            placeholder="First name"
           />
           <input
             value={email}
