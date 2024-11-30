@@ -12,6 +12,7 @@ export default function Login({ setLogin }) {
 
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
 
 
   const login = async (e) => {
@@ -24,6 +25,7 @@ export default function Login({ setLogin }) {
       closeLogin()
 
     } catch (error) {
+      setError("invalid credentials")
       console.log(error)
     }
   }
@@ -84,6 +86,9 @@ export default function Login({ setLogin }) {
             Don't have an account?
             <span className="text-[#3084A9] ml-1 cursor-pointer" onClick={showSingUp}>Sign up</span>
           </p>
+          <div className="text-center">
+            {error && <span className="text-red-500 font-mono text-base font-bold">{error}</span>}
+          </div>
         </form>
       </div>
     </div>

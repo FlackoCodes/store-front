@@ -12,6 +12,7 @@ export default function SignUp({ setLogin }) {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("")
 
   const register = async (e) => {
     e.preventDefault();
@@ -27,6 +28,7 @@ export default function SignUp({ setLogin }) {
 
       toggleLogs();
     } catch (error) {
+      setError("invalid credentials")
       console.error(error);
     }
   };
@@ -95,7 +97,7 @@ export default function SignUp({ setLogin }) {
             </span>
           </p>
           <div className="text-center">
-            <span className="text-red-500 font-mono text-base font-bold">Invalid credentials</span>
+            {error && <span className="text-red-500 font-mono text-base font-bold">{error}</span>}
           </div>
         </form>
       </div>
