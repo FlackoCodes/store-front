@@ -4,9 +4,9 @@ import { data } from "../../data";
 export default function Products() {
 
   return (
-    <div className="bg-red-500 grid grid-cols-1 md:grid-cols-4 gap-2 my-2">
+    <div className="grid grid-cols-1 md:grid-cols-4 gap-2 my-2">
       {data.map((product) => (
-        <div key={product.id} className="flex flex-col gap-1 bg-blue-600">
+        <div key={product.id} className="flex flex-col gap-1">
           <img
             src={product.image}
             className="rounded-md w-[150px] h-[180px] md:w-[230px] md:h-[250px]"

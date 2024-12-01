@@ -24,6 +24,8 @@ export default function About() {
     dispatch(decreaseQuantity())
   }
 
+  const disableBtn = () => quantity === 0;
+
 
   useEffect(() => {
     // console.log('Quantity has changed:', quantity);
