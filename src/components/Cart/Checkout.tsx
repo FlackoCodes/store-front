@@ -22,7 +22,7 @@ function Checkout() {
 
     const shipping: number = 50;
     const grandTotal = totalPrice + shipping;
-    const amount = grandTotal * 100;
+    const amount = grandTotal * 0.1;
 
 
     const componentProps = {
@@ -36,9 +36,9 @@ function Checkout() {
         publicKey: PAYSTACK_API,
         text: "Continue and Pay",
         onSuccess: () => alert("Thanks, see you again"),
-        className: "bg-amber-800 text-white uppercase font-mediumtext- sm py-2 px - 6 roundeds shadow - md transition - all duration - 300ease -in -out hover: bg - amber - 700 hover: shadow - lg focus: outline - nonfocus: ring - 2 focus: ring - amber - 500"
+        className: "bg-amber-800 text-white uppercase font-medium text-sm py-2 px-6 rounded shadow-md transition-all duration-300 ease-in-out hover:bg-amber-700 hover: shadow-lg"
     }
-
+s
 
     return (
         <div className="w-[75%] my-0 mx-auto bg-white">
@@ -53,7 +53,7 @@ function Checkout() {
                     <form action="/" className="mt-2">
                         <div className="grid grid-cols-[1fr_1fr] gap-y-4 items-center">
                             <div>
-                                <label htmlFor="name" className="block capitalize font-bold my-1">name</label>
+                                <label htmlFor="name" className="block capitalize font-bold my-1">full name</label>
                                 <input
                                     value={name}
                                     type="text"
@@ -76,7 +76,7 @@ function Checkout() {
                                 />
                             </div>
                             <div>
-                                <label htmlFor="phone" className="block capitalize font-bold my-1">name</label>
+                                <label htmlFor="phone" className="block capitalize font-bold my-1">phone</label>
                                 <input
                                     value={phone}
                                     onChange={(e) => setPhone(e.target.value)}
