@@ -13,6 +13,8 @@ function Checkout() {
     const [email, setEmail] = useState("")
     const [name, setName] = useState("")
     const [address, SetAddress] = useState("")
+    const [zip, SetZip] = useState("")
+    const [country, SetCountry] = useState("")
 
 
 
@@ -38,11 +40,10 @@ function Checkout() {
         onSuccess: () => alert("Thanks, see you again"),
         className: "bg-amber-800 text-white uppercase font-medium text-sm py-2 px-6 rounded shadow-md transition-all duration-300 ease-in-out hover:bg-amber-700 hover: shadow-lg"
     }
-s
 
     return (
-        <div className="w-[75%] my-0 mx-auto bg-white">
-            <div className="grid grid-cols-[65%_35%] gap-2 my-6">
+        <div className="md:w-[85%] lg:w-[75%] my-0 mx-auto bg-white">
+            <div className="flex flex-col lg:grid lg:grid-cols-[65%_35%] gap-2 my-6">
                 <div className="py-2 px-4 shadow-lg rounded">
                     <header className="my-8">
                         <h1 className="uppercase text-black font-bold text-lg tracking-tight">checkout</h1>
@@ -51,19 +52,19 @@ s
                         <span className="uppercase tracking-wide font-bold text-base text-orange-300 my-4">billing details</span>
                     </div>
                     <form action="/" className="mt-2">
-                        <div className="grid grid-cols-[1fr_1fr] gap-y-4 items-center">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                             <div>
                                 <label htmlFor="name" className="block capitalize font-bold my-1">full name</label>
                                 <input
                                     value={name}
+                                    onChange={(e) => setName(e.target.value)}
                                     type="text"
                                     id="name"
-                                    onChange={(e) => setName(e.target.value)}
-                                    placeholder="Enter your name"
-                                    className="px-4 py-2 border border-gray-300 rounded-md 
-                                    focus:outline-none focus:border-blue-500 w-[300px]"
+                                    placeholder="full name"
+                                    className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 w-full"
                                 />
                             </div>
+
                             <div>
                                 <label htmlFor="email" className="block capitalize font-bold my-1">email</label>
                                 <input
@@ -72,21 +73,21 @@ s
                                     type="email"
                                     id="email"
                                     placeholder="Enter your email"
-                                    className="px-4 py-2 border w-[300px] border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+                                    className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 w-full"
                                 />
                             </div>
-                            <div>
-                                <label htmlFor="phone" className="block capitalize font-bold my-1">phone</label>
-                                <input
-                                    value={phone}
-                                    onChange={(e) => setPhone(e.target.value)}
-                                    type="tel"
-                                    id="phone"
-                                    placeholder="Enter your phone"
-                                    className="px-4 py-2 border border-gray-300 rounded-md 
-                                    focus:outline-none focus:border-blue-500 w-[300px]"
-                                />
-                            </div>
+                        </div>
+                        <div>
+                            <label htmlFor="phone" className="block capitalize font-bold my-1">phone</label>
+                            <input
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter your phone"
+                                className="px-4 py-2 border border-gray-300 rounded-md 
+                    focus:outline-none focus:border-blue-500 w-[300px]"
+                            />
                         </div>
                         <div className="mt-8">
                             <header>
@@ -95,42 +96,44 @@ s
                         </div>
                         <div>
                             <label htmlFor="address" className="block capitalize font-bold my-1">address</label>
-                            <input value={address} onChange={(e) => SetAddress(e.target.value)} type="text" placeholder="your adress..." className="px-4 py-2 border border-gray-300 rounded-md 
-                                    focus:outline-none focus:border-blue-500 w-full" />
+                            <input
+                                value={address}
+                                onChange={(e) => SetAddress(e.target.value)}
+                                type="text"
+                                placeholder="your address..."
+                                className="px-4 py-2 border border-gray-300 rounded-md 
+                focus:outline-none focus:border-blue-500 w-full"
+                            />
                         </div>
-                        <div className="grid grid-cols-[1fr_1fr] gap-y-4 items-center mt-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                             <div>
                                 <label htmlFor="zip" className="block capitalize font-bold my-1">zip code</label>
                                 <input
+                                    value={zip}
+                                    onChange={(e) => SetZip(e.target.value)}
                                     type="text"
                                     id="zip"
                                     placeholder="zip code"
-                                    className="px-4 py-2 border border-gray-300 rounded-md 
-                                    focus:outline-none focus:border-blue-500 w-[300px]"
+                                    className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 w-full"
                                 />
                             </div>
-                            <div>
-                                <label htmlFor="city" className="block capitalize font-bold my-1">city</label>
-                                <input
-                                    type="text"
-                                    id="city"
-                                    placeholder="Enter your city"
-                                    className="px-4 py-2 border w-[300px] border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
-                                />
-                            </div>
+
                             <div>
                                 <label htmlFor="country" className="block capitalize font-bold my-1">country</label>
                                 <input
+                                    value={country}
+                                    onChange={(e) => SetCountry(e.target.value)}
                                     type="text"
                                     id="country"
                                     placeholder="Enter your country"
-                                    className="px-4 py-2 border border-gray-300 rounded-md 
-                                    focus:outline-none focus:border-blue-500 w-[300px]"
+                                    className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 w-full"
                                 />
                             </div>
                         </div>
+
                     </form>
                 </div>
+
                 <div className="p-2 shadow-lg rounded h-fit">
                     <header className="my-8">
                         <h1 className="uppercase text-black font-bold text-lg tracking-tight">summary</h1>
