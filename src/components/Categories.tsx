@@ -4,6 +4,8 @@ import SubSellers from "./SubSellers";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./ui/carousel";
 import car1 from "../images/car1.jpg"
 import car2 from "../images/car2.jpg"
+import car3 from "../images/car-3.jpg"
+import car4 from "../images/unsplash car.jpg"
 
 
 export default function Categories() {
@@ -20,11 +22,11 @@ export default function Categories() {
               <CarouselItem className="basis-1/3">
                 <div className="mt-2">
                   <div>
-                    <img src={car1} alt="cake" className="rounded-md" />
+                    <img src={car4} alt="cake" className="rounded-md" />
                   </div>
                   <div className="text-center my-4">
                     <h3 className="text-[#1F252C] text-base font-medium">
-                      by{" "}
+                      by
                       <span className="text-[#3084A9] text-sm font-normal">
                         HERTY TASTY HOUSE
                       </span>
@@ -40,7 +42,23 @@ export default function Categories() {
                   </div>
                   <div className="text-center my-4">
                     <h3 className="text-[#1F252C] text-base font-medium">
-                      by{" "}
+                      by
+                      <span className="text-[#3084A9] text-sm font-normal">
+                        HERTY TASTY HOUSE
+                      </span>
+                    </h3>
+                    <h5 className="my-4 text-[#757C86] font-medium">¢400-¢800</h5>
+                  </div>
+                </div>
+              </CarouselItem>
+              <CarouselItem className="basis-1/3">
+                <div className="mt-2">
+                  <div>
+                    <img src={car3} alt="cake" className="rounded-md" />
+                  </div>
+                  <div className="text-center my-4">
+                    <h3 className="text-[#1F252C] text-base font-medium">
+                      by
                       <span className="text-[#3084A9] text-sm font-normal">
                         HERTY TASTY HOUSE
                       </span>
@@ -56,23 +74,7 @@ export default function Categories() {
                   </div>
                   <div className="text-center my-4">
                     <h3 className="text-[#1F252C] text-base font-medium">
-                      by{" "}
-                      <span className="text-[#3084A9] text-sm font-normal">
-                        HERTY TASTY HOUSE
-                      </span>
-                    </h3>
-                    <h5 className="my-4 text-[#757C86] font-medium">¢400-¢800</h5>
-                  </div>
-                </div>
-              </CarouselItem>
-              <CarouselItem className="basis-1/3">
-                <div className="mt-2">
-                  <div>
-                    <img src={car2} alt="cake" className="rounded-md" />
-                  </div>
-                  <div className="text-center my-4">
-                    <h3 className="text-[#1F252C] text-base font-medium">
-                      by{" "}
+                      by
                       <span className="text-[#3084A9] text-sm font-normal">
                         HERTY TASTY HOUSE
                       </span>

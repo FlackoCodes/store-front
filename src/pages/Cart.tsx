@@ -23,7 +23,6 @@ export default function Cart() {
                         <SubSellers />
                     </div>
                 </div>
-
             }
         </div>)
 };

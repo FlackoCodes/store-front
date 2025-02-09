@@ -4,6 +4,9 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase-config";
+
 
 import MainLayout from "./Layout/MainLayout";
 import Home from "./pages/Home";
@@ -20,6 +23,9 @@ import Checkout from "./components/Cart/Checkout";
 
 
 function App() {
+
+  
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>

@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase-config";
 
+
 export default function NavBar({ user }) {
   const dispatch = useDispatch();
   const isActive = useSelector((state: RootState) => state.log.isActive);

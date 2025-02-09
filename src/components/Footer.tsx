@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col gap-2">
           <h3 className="font-bold mt-2">Products</h3>
-          <ul className="list-none flex flex-col gap-1 md:gap-2 font-normal tracking-tight">
+          <ul className="list-none flex flex-col gap-1 md:gap-2 font-normal tracking-tight hover:underline">
             <li>
               <Link to={"/flash-sales"}>Flash Sales</Link>
             </li>
