@@ -17,14 +17,17 @@ import Vendor3 from "./components/Vendors/Vendor3";
 import Vendor4 from "./components/Vendors/Vendor4";
 import Vendor5 from "./components/Vendors/Vendor5";
 import Checkout from "./components/Cart/Checkout";
+import { useState } from "react";
 
 
 function App() {
+    const [login, setLogin] = useState(false);  // <-- add this line
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login setLogin={setLogin} />} />
         <Route path="/vendor1" element={<About />} />
         <Route path="/vendor2" element={<Vendor2 />} />
         <Route path="/vendor3" element={<Vendor3 />} />
