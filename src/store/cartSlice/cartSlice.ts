@@ -35,7 +35,7 @@ export const cartSlice = createSlice({
     deleteItem: (state, action: PayloadAction<CartItem>) => {
       state.cart = state.cart.filter((item) => item.id !== action.payload.id);
       state.total--;
-      // console.log("delete item");
+     
     },
     increaseQuantity: (state) => {
       state.quantity++;

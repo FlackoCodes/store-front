@@ -7,20 +7,19 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase-config";
 
 export default function MainLayout() {
-
-  const [currentUser, setCurrentUser] = useState(null); // Default to null instead of empty string
+  const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setCurrentUser(user);  // Set the user if logged in
+        setCurrentUser(user);
       } else {
-        setCurrentUser(null);  // Set to null if not logged in
+        setCurrentUser(null);
       }
     });
 
-    return () => unsubscribe(); // Clean up listener on component unmount
-  }, []); // Empty dependency array to run the effect only once
+    return () => unsubscribe();
+  }, []);
 
   return (
     <>

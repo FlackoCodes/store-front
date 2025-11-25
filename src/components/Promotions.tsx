@@ -5,9 +5,7 @@ import { promotionData } from "../data";
 import { useState, useRef, useEffect } from "react";
 
 export default function Promotions() {
-
   // useRef hook ---> allows to store mutable values that does not cause re-render when updated
-
 
   const interval = useRef();
   const [days, setDays] = useState(0);
@@ -23,8 +21,12 @@ export default function Promotions() {
       const distance = timerDate - now;
 
       const remainingDays = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const remainingHours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const remainingMinutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const remainingHours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const remainingMinutes = Math.floor(
+        (distance % (1000 * 60 * 60)) / (1000 * 60)
+      );
       const remainingSeconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       if (distance < 0) {
@@ -74,9 +76,7 @@ export default function Promotions() {
             <div className="absolute inset-0 flex flex-col items-center justify-center">
               <div className="grid grid-cols-4 gap-2 md:gap-4 w-full max-w-[280px] md:max-w-xs">
                 <div className="bg-white p-2 rounded-md flex flex-col items-center text-center">
-                  <h4 className="text-sm font-semibold text-[#3084A9]">
-                    Days
-                  </h4>
+                  <h4 className="text-sm font-semibold text-[#3084A9]">Days</h4>
                   <p className="text-xl text-black">{days}</p>
                 </div>
                 <div className="bg-white p-2 rounded-md flex flex-col items-center text-center">

@@ -1,18 +1,7 @@
 {
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "composite": true,
-    "module": "commonjs",
-    "target": "ES2017",
-    "outDir": "./dist",
-    "rootDir": "./", // Adjust if needed
-    "noEmit": false,
-    "strict": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "skipLibCheck": true
-  },
-  "include": ["**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }

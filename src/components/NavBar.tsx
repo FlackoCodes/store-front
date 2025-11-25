@@ -23,7 +23,7 @@ export default function NavBar({ user }) {
   };
 
   async function logout() {
-    await signOut(auth)
+    await signOut(auth);
   }
 
   return (
@@ -36,31 +36,42 @@ export default function NavBar({ user }) {
             </Link>
           </div>
           <div className="hidden md:block">
-            <h1 className="font-serif md:text-2xl lg:text-4xl font-bold text-white banner">cakes and more</h1>
+            <h1 className="font-serif md:text-2xl lg:text-4xl font-bold text-white banner">
+              cakes and more
+            </h1>
           </div>
           <div className="flex items-center gap-3">
             <div className="flex gap-1 items-center">
               <div className="relative">
                 <CgShoppingCart className="text-white" />
-                <span className="text-orange-500 text-xs font-bold absolute -top-2 right-1">{total}</span>
+                <span className="text-orange-500 text-xs font-bold absolute -top-2 right-1">
+                  {total}
+                </span>
               </div>
-              <Link to={"/cart"} className="capitalize text-white">cart</Link>
+              <Link to={"/cart"} className="capitalize text-white">
+                cart
+              </Link>
             </div>
-            {
-              user ? <div className="flex items-center gap-x-3">
-                <p className="text-white font-serif text-sm md:text-lg font-bold ml-2">Hello, {user.displayName || "User"}
+            {user ? (
+              <div className="flex items-center gap-x-3">
+                <p className="text-white font-serif text-sm md:text-lg font-bold ml-2">
+                  Welcome, {user.displayName || "User"}
                 </p>
                 <button
                   onClick={logout}
                   className="border-none rounded-sm bg-white text-[#3084A9] py-0.5 px-1.5 md:py-1 md:px-4 capitalize"
-                >logout</button>
-              </div> : <button
+                >
+                  logout
+                </button>
+              </div>
+            ) : (
+              <button
                 onClick={showLogs}
                 className="border-none rounded-sm bg-white text-[#3084A9] py-1 px-3 capitalize"
               >
                 login/signup
               </button>
-            }
+            )}
           </div>
         </nav>
         {isActive && <SignUp setLogin={setLogin} />}
@@ -69,13 +80,3 @@ export default function NavBar({ user }) {
     </div>
   );
 }
-
-{/* <div className="flex items-center border lg:ml-[300px] border-gray-300 rounded-lg px-3 py-2 max-w-md bg-white w-full sm:">
-              <BiSearch className="text-xl text-[#3084A9] mr-2" />
-              <input
-                type="text"
-                placeholder="search"
-                className="w-full p-1 outline-none"
-              />
-              <GiHamburgerMenu className="text-xl text-[#3084A9] ml-auto" />
-            </div> */}

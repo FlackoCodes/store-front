@@ -1,12 +1,11 @@
-import Image from 'next/image';
-import img from '../../images/chief.png';
+import img from "../../images/chief.png";
 
 export default function Founder() {
   return (
     <div className="w-[85%] my-0 mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div>
-          <Image src={img} alt="Flacko" />
+          <img src={img} alt="Flacko" />
         </div>
         <div>
           <div className="flex flex-col gap-2 text-[#1F252C] font-normal">

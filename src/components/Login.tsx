@@ -6,29 +6,23 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase-config";
 
-
 export default function Login({ setLogin }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [error, setError] = useState("")
-
-
-  const login = async (e) => {
-    e.preventDefault()
+  const login = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
     try {
-      const user = await (signInWithEmailAndPassword(auth, email, password))
+      const user = await signInWithEmailAndPassword(auth, email, password);
       console.log(user);
 
-
-      closeLogin()
-
+      closeLogin();
     } catch (error) {
-      setError("invalid credentials")
-      console.log(error)
+      setError("invalid credentials");
+      console.log(error);
     }
-  }
+  };
 
   const dispatch = useDispatch();
 
@@ -37,14 +31,14 @@ export default function Login({ setLogin }) {
   // };
 
   const showSingUp = () => {
-    dispatch(setActive())
-    setLogin(false)
-  }
+    dispatch(setActive());
+    setLogin(false);
+  };
 
   const closeLogin = () => {
-    setLogin(false)
-    console.log('console logged');
-  }
+    setLogin(false);
+    console.log("console logged");
+  };
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
@@ -65,29 +59,43 @@ export default function Login({ setLogin }) {
         <form onSubmit={login}>
           <input
             value={email}
-            onChange={(e) => { setEmail(e.target.value) }}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
             type="text"
             className="rounded-md outline-none border-gray-300 border-[1.5px] w-full py-2 px-3 mb-4"
             placeholder="Email address"
           />
           <input
             value={password}
-            onChange={(e) => { setPassword(e.target.value) }}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
             type="password"
             className="rounded-md outline-none border-gray-300 border-[1.5px] w-full py-2 px-3 mb-4"
             placeholder="Password"
           />
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-[#3084A9] text-white rounded-md">
+            className="w-full py-2 px-4 bg-[#3084A9] text-white rounded-md"
+          >
             Login
           </button>
           <p className="text-[#757C86] mt-4 text-center">
             Don't have an account?
-            <span className="text-[#3084A9] ml-1 cursor-pointer" onClick={showSingUp}>Sign up</span>
+            <span
+              className="text-[#3084A9] ml-1 cursor-pointer"
+              onClick={showSingUp}
+            >
+              Sign up
+            </span>
           </p>
           <div className="text-center">
-            {error && <span className="text-red-500 font-mono text-base font-bold">{error}</span>}
+            {error && (
+              <span className="text-red-500 font-mono text-base font-bold">
+                {error}
+              </span>
+            )}
           </div>
         </form>
       </div>

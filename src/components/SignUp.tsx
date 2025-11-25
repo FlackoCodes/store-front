@@ -8,27 +8,29 @@ import { auth } from "../firebase-config";
 import { updateProfile } from "firebase/auth";
 
 export default function SignUp({ setLogin }) {
-
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("")
+  const [error, setError] = useState("");
 
   const register = async (e) => {
     e.preventDefault();
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
       const user = userCredential.user;
 
       await updateProfile(user, {
         displayName: firstName,
       });
 
-
       toggleLogs();
     } catch (error) {
-      setError("invalid credentials")
+      setError("invalid credentials");
       console.error(error);
     }
   };
@@ -63,28 +65,35 @@ export default function SignUp({ setLogin }) {
         <form onSubmit={register}>
           <input
             value={firstName}
-            onChange={(e) => { setFirstName(e.target.value) }}
+            onChange={(e) => {
+              setFirstName(e.target.value);
+            }}
             type="text"
             className="rounded-md outline-none border-gray-300 border-[1.5px] w-full py-2 px-3 mb-4"
             placeholder="First name"
           />
           <input
             value={email}
-            onChange={(e) => { setEmail(e.target.value) }}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
             type="email"
             className="rounded-md outline-none border-gray-300 border-[1.5px] w-full py-2 px-3 mb-4"
             placeholder="Email address"
           />
           <input
             value={password}
-            onChange={(e) => { setPassword(e.target.value) }}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
             type="password"
             className="rounded-md outline-none border-gray-300 border-[1.5px] w-full py-2 px-3 mb-4"
             placeholder="Password"
           />
           <button
             type="submit"
-            className="w-full py-2 px-4 bg-[#3084A9] text-white rounded-md capitalize">
+            className="w-full py-2 px-4 bg-[#3084A9] text-white rounded-md capitalize"
+          >
             Create Account
           </button>
           <p className="text-[#757C86] mt-4 text-center">
@@ -97,7 +106,11 @@ export default function SignUp({ setLogin }) {
             </span>
           </p>
           <div className="text-center">
-            {error && <span className="text-red-500 font-mono text-base font-bold">{error}</span>}
+            {error && (
+              <span className="text-red-500 font-mono text-base font-bold">
+                {error}
+              </span>
+            )}
           </div>
         </form>
       </div>
