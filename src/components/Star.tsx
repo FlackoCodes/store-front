@@ -1,6 +1,6 @@
 import { FaStar } from "react-icons/fa";
 
-export default function Star({ className }) {
+export default function Star({ className }: { className: string }) {
   return (
     <div className={`flex gap-1 ${className}`}>
       <FaStar className="text-yellow-500" />

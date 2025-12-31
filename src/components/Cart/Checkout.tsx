@@ -15,14 +15,17 @@ function Checkout() {
   const [zip, SetZip] = useState("");
   const [country, SetCountry] = useState("");
 
+  const isFormValid = () => {
+    return name && email && phone && address && zip && country;
+  };
+
   const navigate = useNavigate();
   const totalPrice = cart.reduce(function (prev, next) {
     return prev + next.price;
   }, 0);
 
-  const shipping: number = 50;
-  const grandTotal = totalPrice + shipping;
-  const amount = grandTotal * 0.1;
+  const grandTotal = totalPrice;
+  const amount = grandTotal * 100;
 
   const success = () => {
     toast.success("Payment successful! Thank you for your order.");
@@ -137,7 +140,7 @@ function Checkout() {
                   type="text"
                   placeholder="your address..."
                   className="px-4 py-2 border border-gray-300 rounded-md 
-                focus:outline-none focus:border-blue-500 w-full"
+                focus:outline-none focus:border-blue-500 w-[400px]"
                 />
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
@@ -211,14 +214,27 @@ function Checkout() {
                 </div>
                 <div className="flex items-center justify-between gap-2 my-1">
                   <h3 className="font-medium text-sm">Shipping</h3>
-                  <span>GHS 50</span>
+                  <span>GHS 0.00</span>
                 </div>
                 <div className="flex items-center justify-between gap-2 my-1">
                   <h3 className="font-medium text-sm">grand total</h3>
                   <span>GHS {grandTotal}</span>
                 </div>
                 <div className="my-4">
-                  <PaystackButton {...componentProps} />
+                  <PaystackButton
+                    {...componentProps}
+                    className={`${
+                      !isFormValid()
+                        ? "bg-gray-400 cursor-not-allowed"
+                        : "bg-amber-800 hover:bg-amber-700 shadow-md hover:shadow-lg"
+                    } text-white uppercase font-medium text-sm py-2 px-6 rounded transition-all duration-300 ease-in-out`}
+                  />
+                  {!isFormValid() && (
+                    <p className="text-red-500 text-sm mt-2">
+                      Please fill in all the required fields to proceed with
+                      payment.
+                    </p>
+                  )}
                 </div>
               </div>
             ) : (
