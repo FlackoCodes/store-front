@@ -2,7 +2,7 @@ import { BiBell, BiSearch } from "react-icons/bi";
 import { CgShoppingCart } from "react-icons/cg";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-export default function MobilePopup() {
+export default function MobilePopup({ showLogs }: { showLogs: () => void }) {
   return (
     <>
       <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2 max-w-md bg-white">

@@ -5,7 +5,7 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -30,22 +30,23 @@ export default function Contact() {
         Newsletter
       </h5>
       {!isSubscribed ? (
-        <div className="relative">
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="pr-10 border border-gray-300 rounded-md w-full py-2 px-3 outline-none mt-4"
-            placeholder="Email address"
-          />
-          <button
-            type="button"
-            onClick={handleSubscribe}
-            className="absolute right-2 bottom-1 py-1 px-4 text-white bg-[#3084A9] rounded-md"
-          >
-            Join
-          </button>
-        </div>
+        <form action="" onSubmit={handleSubscribe}>
+          <div className="relative">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="pr-10 border border-gray-300 rounded-md w-full py-2 px-3 outline-none mt-4"
+              placeholder="Email address"
+            />
+            <button
+              type="submit"
+              className="absolute right-2 bottom-1 py-1 px-4 text-white bg-[#3084A9] rounded-md"
+            >
+              Join
+            </button>
+          </div>
+        </form>
       ) : (
         <div className="mt-4">
           <h3 className="text-black font-medium text-lg">{message}</h3>

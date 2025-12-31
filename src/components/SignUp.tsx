@@ -7,13 +7,17 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase-config";
 import { updateProfile } from "firebase/auth";
 
-export default function SignUp({ setLogin }) {
+export default function SignUp({
+  setLogin,
+}: {
+  setLogin: (value: boolean) => void;
+}) {
   const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const register = async (e) => {
+  const register = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
