@@ -7,7 +7,7 @@ import { useState, useRef, useEffect } from "react";
 export default function Promotions() {
   // useRef hook ---> allows to store mutable values that does not cause re-render when updated
 
-  const interval = useRef();
+  const interval = useRef<NodeJS.Timeout | undefined>();
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -65,71 +65,84 @@ export default function Promotions() {
           <FaArrowRight className="bg-[#3084A9] text-white rounded-full p-1 shadow-md w-5 h-5 cursor-pointer" />
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {promotionData.map((product) => (
-          <div className="relative" key={product.id}>
-            <img
-              src={product.image}
-              alt="cake image"
-              className="rounded-sm w-[350px] h-[400px] md:w-[679px] md:h-[640px]"
-            />
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <div className="grid grid-cols-4 gap-2 md:gap-4 w-full max-w-[280px] md:max-w-xs">
-                <div className="bg-white p-2 rounded-md flex flex-col items-center text-center">
-                  <h4 className="text-sm font-semibold text-[#3084A9]">Days</h4>
-                  <p className="text-xl text-black">{days}</p>
-                </div>
-                <div className="bg-white p-2 rounded-md flex flex-col items-center text-center">
-                  <h4 className="text-sm font-semibold text-[#3084A9]">
-                    Hours
-                  </h4>
-                  <p className="text-xl text-black">{hours}</p>
-                </div>
-                <div className="bg-white p-2 rounded-md flex flex-col items-center text-center">
-                  <h4 className="text-sm font-semibold text-[#3084A9]">
-                    Minutes
-                  </h4>
-                  <p className="text-xl text-black">{minutes}</p>
-                </div>
-                <div className="bg-white p-2 rounded-md flex flex-col items-center text-center">
-                  <h4 className="text-sm font-semibold text-[#3084A9]">
-                    Seconds
-                  </h4>
-                  <p className="text-xl text-black">{seconds}</p>
-                </div>
-              </div>
-              {/* Rating Section */}
-              <div className="w-full max-w-[280px] md:max-w-xs mt-4 bg-white rounded-md shadow-md text-left py-3 px-2">
-                <h5 className="text-lg font-semibold">{product.name}</h5>
-                <div className="flex gap-1 items-center">
-                  <Star className={""} />
-                  <span>4.6</span>
-                </div>
-                <div className="flex justify-between items-center mt-6">
-                  <div>
-                    <div className="flex gap-1">
-                      <div className="flex items-center">
-                        <h5 className="flex items-center">
-                          <FaCediSign />
-                          {product.price}
-                        </h5>
-                      </div>
-                      <div className="flex items-center">
-                        <h6 className="flex items-center text-slate-300 text-sm">
-                          <FaCediSign />
-                          500
-                        </h6>
-                      </div>
-                    </div>
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {promotionData.map((product) => (
+            <div key={product.id} className="relative w-full">
+              {/* Image */}
+              <img
+                src={product.image}
+                alt="cake image"
+                className="w-full aspect-[3/4] object-cover rounded-sm"
+              />
+
+              {/* Overlay */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                {/* Countdown Timer */}
+                <div className="grid grid-cols-4 gap-3 w-full max-w-xs lg:max-w-sm">
+                  <div className="bg-white p-2 rounded-md flex flex-col items-center text-center">
+                    <h4 className="text-sm font-semibold text-[#3084A9]">
+                      Days
+                    </h4>
+                    <p className="text-xl text-black">{days}</p>
                   </div>
-                  <div>
-                    <Button className={" "} product={product} />
+
+                  <div className="bg-white p-2 rounded-md flex flex-col items-center text-center">
+                    <h4 className="text-sm font-semibold text-[#3084A9]">
+                      Hours
+                    </h4>
+                    <p className="text-xl text-black">{hours}</p>
+                  </div>
+
+                  <div className="bg-white p-2 rounded-md flex flex-col items-center text-center">
+                    <h4 className="text-sm font-semibold text-[#3084A9]">
+                      Minutes
+                    </h4>
+                    <p className="text-xl text-black">{minutes}</p>
+                  </div>
+
+                  <div className="bg-white p-2 rounded-md flex flex-col items-center text-center">
+                    <h4 className="text-sm font-semibold text-[#3084A9]">
+                      Seconds
+                    </h4>
+                    <p className="text-xl text-black">{seconds}</p>
+                  </div>
+                </div>
+
+                {/* Product Card */}
+                <div className="w-full max-w-xs lg:max-w-sm mt-4 bg-white rounded-md shadow-md py-3 px-3">
+                  <h5 className="text-lg font-semibold">{product.name}</h5>
+
+                  {/* Rating */}
+                  <div className="flex gap-1 items-center mt-1">
+                    <Star className={""} />
+                    <span className="text-sm">4.6</span>
+                  </div>
+
+                  {/* Price + Button */}
+                  <div className="flex justify-between items-center mt-4">
+                    <div className="flex gap-2 items-center">
+                      <h5 className="flex items-center font-semibold">
+                        <FaCediSign />
+                        {product.price}
+                      </h5>
+
+                      <h6 className="flex items-center text-slate-300 text-sm line-through">
+                        <FaCediSign />
+                        500
+                      </h6>
+                    </div>
+
+                    <Button
+                      className=""
+                      product={{ ...product, quantity: 1 }}
+                    />
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

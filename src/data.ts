@@ -5,8 +5,9 @@ import sales4 from "./images/sales4.png";
 import cake3 from "./images/cake3.jfif";
 import cake8 from "./images/cake8.jpg";
 import vendor1 from "./images/cake-2.jfif";
-import vendor2 from "./images/vendor1.jpg";
-import vendor3 from "./images/vendor2.jpg";
+import vendor2 from "./images/vend2.jpg";
+import vendor3 from "./images/vend3.jpg";
+import vend4 from "./images/vend4.jpg";
 import vendor4 from "./images/vendor3.jpg";
 import vendor5 from "./images/vendor4.jpg";
 import sub1 from "./images/sub1.jpg";
@@ -109,43 +110,83 @@ export const vendorsData = [
     id: 11,
     name: "BARBIE'S DREAM EATS",
     image: vendor1,
-    link: "/vendor1",
-  },
-  {
-    id: 12,
-    name: "BARBIE'S CAKES BANK",
-    image: vendor2,
-    link: "/vendor2",
+    link: "/vendor/vendor1",
   },
   {
     id: 13,
     name: "HERTY TASTY HOUSE",
     image: vendor3,
-    link: "/vendor3",
+    link: "/vendor/vendor3",
   },
   {
     id: 14,
-    name: "JOE”S TOP PICKS",
+    name: "JOE'S TOP PICKS",
     image: vendor4,
-    link: "/vendor4",
+    link: "/vendor/vendor4",
   },
   {
     id: 15,
     name: "HOT 100",
     image: vendor5,
-    link: "/vendor5",
+    link: "/vendor/vendor5",
   },
 ];
 
-export const vendorOne = [
-  {
-    id: 111,
-    image: vendAbout,
-    name: "barbie dream eats",
-    description: "Strawberry Swirl Mile Crepe Cake",
-    price: 600.0,
-    about:
-      "This cake is seriously GIANT! The skyscraping 20 Layer Chocolate Peanut Butter Cake features alternating layers of devil's food cake and peanut butter mascarpone to satisfy anyone's sweet tooth. It's made with high-end Valrhona chocolate and filled with peanut butter cream, and it's the perfect ending to a luxurious and romantic meal. Pair it with peanut brittle for the full experience!",
-    sub: "LAVO is a globally recognized destination for Italian cuisine, helmed by Chef Partner Ralph Scamardella, with iconic locations in New York, Las Vegas, San Diego, and Singapore.",
-  },
-];
+export const ourVendors = {
+  vendor1: [
+    {
+      id: 111,
+      image: vendAbout,
+      name: "Barbie Dream Eats",
+      description: "Strawberry Swirl Mille Crepe Cake",
+      price: 600,
+      about:
+      "A rich and satisfying chocolate fudge cake made for true dessert lovers. Moist layers, deep cocoa flavor, and a smooth finish make this a crowd favorite for family gatherings and celebrations.",
+    sub:
+    "Barbie Dream Eats House is known for comforting, homemade-style desserts prepared with care and generous portions.",
+  
+    },
+  ],
+  vendor2: [
+    {
+      id: 222,
+      image: vendor2,
+      name: "Hearty Tasty House",
+      description: "Classic Chocolate Fudge Cake",
+      price: 450,
+       about:
+      "This cake is seriously GIANT! The skyscraping 20-layer Chocolate Peanut Butter Cake features alternating layers of rich cake and smooth peanut butter mascarpone. Crafted with premium ingredients, it’s perfect for luxury celebrations and unforgettable moments.",
+    sub:
+      " Hearty Tasty specializes in premium desserts made for birthdays, weddings, and special occasions, delivering elegance in every bite.",
+    },
+  ],
+  vendor3: [
+    {
+      id: 333,
+      image: vendor3,
+      name: "Joe's Pick",
+      description: "Vanilla Buttercream Celebration Cake",
+      price: 380,
+       about:
+      "Light, fluffy vanilla sponge layered with smooth buttercream frosting. This cake delivers a timeless taste that never goes out of style, perfect for any celebration.",
+    sub:
+      "Joe's Pick focuses on simple, well-loved flavors made fresh and delivered with consistency you can trust.",
+  
+    },
+  ],
+  vendor4: [
+    {
+      id: 444,
+      image: vend4,
+      name: "Hot 100",
+      description: "Red Velvet Supreme Cake",
+      price: 520,
+      about:
+      "Bold, rich, and indulgent red velvet cake layered with creamy frosting. Designed for those who love standout flavors and premium presentation.",
+    sub:
+      "Hot 100 delivers trendy, high-demand desserts inspired by what customers love most, combining flavor with style.", 
+    },
+  ],
+} as const;
+
+

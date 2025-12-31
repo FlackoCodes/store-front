@@ -3,11 +3,14 @@ import cakeBg from "../images/cake-background.jfif";
 
 export default function CTA() {
   return (
-    <div className="relative bg-cover bg-center h-[561px]" style={{ backgroundImage: `url(${cakeBg})` }}>
+    <div
+      className="relative bg-cover bg-center h-[400px] mdmax-h-[600px] lg:h-[700px] w-full flex items-center justify-center"
+      style={{ backgroundImage: `url(${cakeBg})` }}
+    >
       <div className="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-50" />
 
       <div className="grid place-content-center min-h-[100vh] relative z-10">
-        <h1 className="text-white text-3xl font-extrabold font-[roboto] w-[300px] text-center tracking-tighter mb-2">
+        <h1 className="text-white mix-blend-plus-darker text-3xl font-extrabold font-[roboto] w-[300px] text-center tracking-tighter mb-2">
           Ghana's Most Iconic Cake For Your Birthday
         </h1>
         <Link

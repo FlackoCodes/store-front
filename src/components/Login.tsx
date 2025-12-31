@@ -6,12 +6,16 @@ import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase-config";
 
-export default function Login({ setLogin }) {
+export default function Login({
+  setLogin,
+}: {
+  setLogin: (value: boolean) => void;
+}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const login = async (e: { preventDefault: () => void; }) => {
+  const login = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     try {
       const user = await signInWithEmailAndPassword(auth, email, password);

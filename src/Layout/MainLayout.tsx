@@ -3,11 +3,11 @@ import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import ScrollToTop from "../scrollToTop";
 import { useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "../firebase-config";
 
 export default function MainLayout() {
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {

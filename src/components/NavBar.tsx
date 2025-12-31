@@ -11,10 +11,10 @@ import { Link } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase-config";
 
-export default function NavBar({ user }) {
+export default function NavBar({ user }: { user: any }) {
   const dispatch = useDispatch();
   const isActive = useSelector((state: RootState) => state.log.isActive);
-  const total = useSelector((state: RootState) => state.cart.total);
+  // const total = useSelector((state: RootState) => state.cart.total);
 
   const [login, setLogin] = useState(false);
 
@@ -44,9 +44,9 @@ export default function NavBar({ user }) {
             <div className="flex gap-1 items-center">
               <div className="relative">
                 <CgShoppingCart className="text-white" />
-                <span className="text-orange-500 text-xs font-bold absolute -top-2 right-1">
+                {/* <span className="text-orange-500 text-xs font-bold absolute -top-2 right-1">
                   {total}
-                </span>
+                </span> */}
               </div>
               <Link to={"/cart"} className="capitalize text-white">
                 cart
