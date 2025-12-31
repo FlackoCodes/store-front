@@ -6,14 +6,13 @@ import {
   decreaseQuantity,
 } from "../../store/cartSlice/cartSlice";
 import { FaMinus, FaPlus } from "react-icons/fa";
-import { RiCoupon2Fill } from "react-icons/ri";
 import { ArrowLeft } from "lucide-react";
 import { useState } from "react";
 import Checkout from "./Checkout";
 
 export default function Cart() {
   const cart = useSelector((state: RootState) => state.cart.cart);
-  const [step, setStep] = useState(1); // 1 = Cart, 2 = Checkout, 3 = Complete
+  const [step, setStep] = useState(1);
 
   const dispatch = useDispatch();
 
