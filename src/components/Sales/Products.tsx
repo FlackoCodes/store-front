@@ -2,9 +2,8 @@ import Button from "../Button";
 import { data } from "../../data";
 
 export default function Products() {
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-4 gap-2 my-2">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 my-2">
       {data.map((product) => (
         <div key={product.id} className="flex flex-col gap-1">
           <img
@@ -14,13 +13,18 @@ export default function Products() {
           />
           <div className="flex flex-col gap-0.5">
             <h4 className="text-[#3084A9] font-medium">{product.name}</h4>
-            <p className="text-[#1F252C] text-[16px] tracking-tight">
+            <p className="text-[#1F252C] text-[16px] tracking-tight lg:w-[65%]">
               {product.description}
             </p>
-            <span className="text-[#1F252C] text-[16px] font-bold">¢{product.price}</span>
+            <span className="text-[#1F252C] text-[16px] font-bold">
+              ¢{product.price}
+            </span>
           </div>
           <div className="flex items-center justify-between">
-            <Button className={"w-full my-2"} product={product} />
+            <Button
+              className={"w-full lg:w-[50%] my-2"}
+              product={{ ...product, quantity: 1 }}
+            />
           </div>
         </div>
       ))}

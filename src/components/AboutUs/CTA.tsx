@@ -2,35 +2,31 @@ import { FaAngleRight } from "react-icons/fa6";
 import cake11 from "../../images/cake11.jfif";
 import { Link } from "react-router-dom";
 
-export default function CTA() {
+export default function HeroBanner() {
   return (
     <div
-      className="bg-cover bg-center h-[357px] mb-10 max-w-[320px] md:max-w-screen-lg md:relative overflow-hidden"
-      style={{
-        backgroundImage: `url(${cake11})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="relative h-[357px] md:h-[500px] w-full mb-10 bg-cover bg-center flex items-start"
+      style={{ backgroundImage: `url(${cake11})` }}
     >
-      <div className="relative top-4 left-4 flex items-center gap-1">
-        <div className="flex items-center space-x-0.5">
-          <Link to={"/"} className="text-[#8B96A5] font-normal">
+      {/* Breadcrumbs */}
+      <div className="absolute top-4 left-4 flex flex-wrap items-center gap-2 text-sm md:text-base">
+        <div className="flex items-center space-x-1">
+          <Link to="/" className="text-[#8B96A5] font-normal hover:underline">
             Home
           </Link>
           <FaAngleRight className="text-[#8B96A5]" />
         </div>
-        <div className="flex items-center space-x-0.5">
+        <div className="flex items-center space-x-1">
           <span className="capitalize text-[#8B96A5] font-normal">
-            about us
+            About Us
           </span>
           <FaAngleRight className="text-[#8B96A5]" />
         </div>
       </div>
-      <div className="absolute -right-9 top-[40%]">
-        <h3 className="hidden md:block text-start w-[230px] text-[#1F252C] font-medium tracking-tight text-lg md:text-[24px]">
-          Our conviction lies in the emotional impact of food
-        </h3>
-      </div>
+
+      <h3 className="hidden md:block absolute right-16 top-1/2 w-[230px] transform -translate-y-1/2 text-[#1F252C] font-medium tracking-tight text-lg md:text-xl">
+        Our conviction lies in the emotional impact of food
+      </h3>
     </div>
   );
 }

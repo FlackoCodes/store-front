@@ -3,7 +3,7 @@ import img from "../../images/chief.png";
 export default function Founder() {
   return (
     <div className="w-[85%] my-0 mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[30%,70%] gap-8 md:items-center">
         <div>
           <img src={img} alt="Flacko" />
         </div>
@@ -30,7 +30,7 @@ export default function Founder() {
             </p>
           </div>
           <div className="text-[#000000] font-bold mt-6">
-            <h5>Fetty Rapcha</h5>
+            <h5>JustTerry</h5>
             <h5>Founder & CEO</h5>
           </div>
         </div>

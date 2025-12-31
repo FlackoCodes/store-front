@@ -22,7 +22,22 @@ export default function Team() {
               />
             </div>
             <div className="text-center">
-              <h3 className="text-[#1F252C] font-medium">Pablo Mils</h3>
+              <h3 className="text-[#1F252C] font-medium">Terry</h3>
+              <p className="text-[#757C86] font-normal">
+                Chief Executive officer
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-0.5 items-center">
+            <div>
+              <img
+                className="w-[65px] h-[65px] rounded-full"
+                src={founderImg}
+                alt="ceo-image"
+              />
+            </div>
+            <div className="text-center">
+              <h3 className="text-[#1F252C] font-medium">Flacko</h3>
               <p className="text-[#757C86] font-normal">
                 Chief Technical officer
               </p>
@@ -37,9 +52,9 @@ export default function Team() {
               />
             </div>
             <div className="text-center">
-              <h3 className="text-[#1F252C] font-medium">Pablo Mils</h3>
+              <h3 className="text-[#1F252C] font-medium">Benson</h3>
               <p className="text-[#757C86] font-normal">
-                Chief Technical officer
+                Chief Operating officer
               </p>
             </div>
           </div>
@@ -52,9 +67,22 @@ export default function Team() {
               />
             </div>
             <div className="text-center">
-              <h3 className="text-[#1F252C] font-medium">Pablo Mils</h3>
+              <h3 className="text-[#1F252C] font-medium">Fetty</h3>
+              <p className="text-[#757C86] font-normal">Lead Designer</p>
+            </div>
+          </div>
+          <div className="flex flex-col gap-0.5 items-center">
+            <div>
+              <img
+                className="w-[65px] h-[65px] rounded-full"
+                src={founderImg}
+                alt="ceo-image"
+              />
+            </div>
+            <div className="text-center">
+              <h3 className="text-[#1F252C] font-medium">Tito</h3>
               <p className="text-[#757C86] font-normal">
-                Chief Technical officer
+                Chief Marketing officer
               </p>
             </div>
           </div>
@@ -67,9 +95,9 @@ export default function Team() {
               />
             </div>
             <div className="text-center">
-              <h3 className="text-[#1F252C] font-medium">Pablo Mils</h3>
+              <h3 className="text-[#1F252C] font-medium">Rabiatu</h3>
               <p className="text-[#757C86] font-normal">
-                Chief Technical officer
+                Chief Financial officer
               </p>
             </div>
           </div>
@@ -82,39 +110,9 @@ export default function Team() {
               />
             </div>
             <div className="text-center">
-              <h3 className="text-[#1F252C] font-medium">Pablo Mils</h3>
+              <h3 className="text-[#1F252C] font-medium">Ato</h3>
               <p className="text-[#757C86] font-normal">
-                Chief Technical officer
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col gap-0.5 items-center">
-            <div>
-              <img
-                className="w-[65px] h-[65px] rounded-full"
-                src={founderImg}
-                alt="ceo-image"
-              />
-            </div>
-            <div className="text-center">
-              <h3 className="text-[#1F252C] font-medium">Pablo Mils</h3>
-              <p className="text-[#757C86] font-normal">
-                Chief Technical officer
-              </p>
-            </div>
-          </div>
-          <div className="flex flex-col gap-0.5 items-center">
-            <div>
-              <img
-                className="w-[65px] h-[65px] rounded-full"
-                src={founderImg}
-                alt="ceo-image"
-              />
-            </div>
-            <div className="text-center">
-              <h3 className="text-[#1F252C] font-medium">Pablo Mils</h3>
-              <p className="text-[#757C86] font-normal">
-                Chief Technical officer
+                Chief Advertising officer
               </p>
             </div>
           </div>

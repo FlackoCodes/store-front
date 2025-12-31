@@ -39,7 +39,7 @@ function Checkout() {
   return (
     <div className="md:w-[85%] lg:w-[75%] my-0 mx-auto bg-white">
       <div className="flex flex-col lg:grid lg:grid-cols-[65%_35%] gap-2 my-6">
-        <div className="py-2 px-4 shadow-lg rounded">
+        <div className="py-4 px-8 shadow-lg rounded md:my-8">
           <header className="my-8">
             <h1 className="uppercase text-black font-bold text-lg tracking-tight">
               checkout
@@ -94,6 +94,7 @@ function Checkout() {
                 phone
               </label>
               <input
+                aria-hidden="true"
                 value={phone}
                 onChange={(e) => setPhone(Number(e.target.value))}
                 type="tel"
@@ -208,7 +209,9 @@ function Checkout() {
               </div>
             </div>
           ) : (
-            <span className="text-center text-lg font-bold">cart is empty</span>
+            <span className="text-center text-lg font-bold">
+              Nothing aadded to cart
+            </span>
           )}
         </div>
       </div>

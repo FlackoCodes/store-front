@@ -145,9 +145,9 @@ export default function About() {
           <h3 className="font-bold text-[#1F252C] tracking-tight p-2 border-b-2 border-[#3084A9]">
             Description
           </h3>
-          <h3 className="font-bold text-[#1F252C] tracking-tight p-2">
+          {/* <h3 className="font-bold text-[#1F252C] tracking-tight p-2">
             Review
-          </h3>
+          </h3> */}
         </div>
         <div className="flex flex-col md:flex-row gap-8">
           <div className="flex-1">
