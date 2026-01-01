@@ -39,7 +39,7 @@ export default function Cart() {
 
   return (
     <div className="w-[85%] mx-auto my-0">
-      {/* Back Button */}
+ 
       <div className="my-10 flex items-center gap-2">
         {step > 1 && (
           <button
